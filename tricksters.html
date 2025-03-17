@@ -1,0 +1,2385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tricksters Gaming Hub | Premium Gaming Experience</title>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+/* Main Variables and Reset */
+:root {
+    --primary: #ff9acd;
+    --primary-dark: #e681b4;
+    --secondary: #00e1ff;
+    --dark: #0c0c0c;
+    --darker: #050505;
+    --light: #f5f5f5;
+    --gray: #333333;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', 'Segoe UI', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--dark);
+    color: var(--light);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navbar - VEED.io inspired */
+header {
+    padding: 0;
+    background-color: rgba(5, 5, 5, 0.95);
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+    transition: var(--transition);
+    height: 70px;
+    display: flex;
+    align-items: center;
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--light);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+    letter-spacing: 1px;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.logo span {
+    color: var(--primary);
+    margin-left: 5px;
+    font-weight: 800;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    height: 100%;
+}
+
+.nav-links li {
+    margin-left: 5px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--light);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    transition: var(--transition);
+    padding: 0 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.nav-links a:not(.btn):after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:not(.btn):hover {
+    color: var(--primary);
+}
+
+.nav-links a:not(.btn):hover:after {
+    width: 100%;
+}
+
+.mobile-menu-btn {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: var(--light);
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary);
+    color: var(--dark);
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+}
+
+.nav-links .btn {
+    margin-left: 15px;
+    height: auto;
+}
+
+.btn:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 154, 205, 0.3);
+}
+
+.btn-outlined {
+    background-color: transparent;
+    border: 2px solid var(--primary);
+    color: var(--light);
+}
+
+.btn-outlined:hover {
+    background-color: var(--primary);
+    color: var(--dark);
+}
+
+/* Animation Classes */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hero Section with Gaming Background */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
+        url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
+    position: relative;
+    overflow: hidden;
+    padding-top: 70px; /* Account for fixed navbar */
+}
+
+/* Add a subtle overlay effect */
+.hero:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(255, 154, 205, 0.2) 0%, rgba(12, 12, 12, 0.9) 70%);
+    pointer-events: none;
+}
+
+/* Add a subtle pink glow to represent gaming RGB lighting */
+.hero:after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, rgba(255, 154, 205, 0.3), transparent);
+    filter: blur(20px);
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 800;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+    animation: fadeInDown 1s ease;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #fff;
+    font-weight: 300;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    animation: fadeInUp 1s ease 0.3s both;
+}
+
+.highlight {
+    color: var(--primary);
+    position: relative;
+}
+
+
+.hero-btns {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    animation: fadeInUp 1s ease 0.6s both;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Section Styles */
+.section {
+    padding: 100px 0;
+    position: relative;
+}
+
+.section-dark {
+    background-color: var(--darker);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title h2:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--primary);
+}
+
+.section-title p {
+    color: #aaa;
+    max-width: 600px;
+    margin: 20px auto 0;
+    font-weight: 300;
+}
+
+/* About Cards */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background-color: rgba(17, 17, 17, 0.8);
+    padding: 40px 30px;
+    border-radius: 5px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 154, 205, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(255, 154, 205, 0.3);
+    box-shadow: 0 10px 25px rgba(255, 154, 205, 0.1);
+}
+
+.feature-card:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover:before {
+    transform: scaleX(1);
+}
+
+.feature-card .icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: var(--primary);
+}
+
+.feature-card h3 {
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.feature-card p {
+    color: #aaa;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+/* Pricing Section */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.pricing-card {
+    background-color: rgba(17, 17, 17, 0.8);
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 154, 205, 0.1);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(255, 154, 205, 0.3);
+    box-shadow: 0 10px 25px rgba(255, 154, 205, 0.1);
+}
+
+.pricing-card.available {
+    border: 2px solid var(--primary);
+    box-shadow: 0 5px 20px rgba(255, 154, 205, 0.2);
+}
+
+.available-tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--primary);
+    color: var(--dark);
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    z-index: 1;
+}
+
+.coming-soon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.coming-soon span {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transform: rotate(-15deg);
+}
+
+.pricing-header {
+    padding: 30px;
+    text-align: center;
+    background-color: rgba(5, 5, 5, 0.8);
+    border-bottom: 1px solid rgba(255, 154, 205, 0.1);
+    position: relative;
+}
+
+.pricing-header h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: var(--light);
+}
+
+.price {
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.price span {
+    font-size: 16px;
+    color: #aaa;
+}
+
+.pricing-body {
+    padding: 30px;
+    flex: 1;
+}
+
+.feature-list {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.feature-list li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    color: #ccc;
+    font-weight: 300;
+}
+
+.feature-list li:before {
+    content: "✓";
+    color: var(--primary);
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.pricing-footer {
+    padding: 20px 30px 30px;
+    text-align: center;
+}
+
+/* Setup Section */
+.setup-content {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.setup-img {
+    flex: 1;
+    min-width: 300px;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.setup-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+    transition: transform 0.5s ease;
+}
+
+.setup-img:hover img {
+    transform: scale(1.05);
+}
+
+.setup-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.setup-text h2 {
+    margin-bottom: 20px;
+    font-size: 36px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.setup-text p {
+    margin-bottom: 20px;
+    color: #ccc;
+    font-weight: 300;
+}
+
+.setup-list {
+    list-style: none;
+    margin-top: 30px;
+}
+
+.setup-list li {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+    color: #ccc;
+    font-weight: 300;
+}
+
+.setup-list li:before {
+    content: "✓";
+    color: var(--primary);
+    margin-right: 15px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Gallery Section */
+.gallery {
+    position: relative;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-overlay h3 {
+    color: var(--light);
+    font-size: 20px;
+    text-align: center;
+    padding: 20px;
+}
+
+/* CTA Section */
+.cta {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        url('https://images.unsplash.com/photo-1547394765-185e1e68f34e?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
+    text-align: center;
+    padding: 120px 0;
+    position: relative;
+}
+
+.cta:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(255, 154, 205, 0.3) 0%, rgba(12, 12, 12, 0.9) 70%);
+}
+
+.cta-content {
+    position: relative;
+    z-index: 1;
+}
+
+.cta h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.cta p {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    color: #ccc;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+/* Events Section Styling */
+.events-section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.section-header {
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-size: 42px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.section-header h2 span, .vip-section h2 span, .merch-preview h2 span {
+    color: #ff9acd;
+}
+
+.section-header p {
+    font-size: 18px;
+    color: #aaaaaa;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.pink-underline {
+    display: block;
+    width: 120px;
+    height: 4px;
+    background-color: #ff9acd;
+    margin: 15px auto 25px;
+}
+
+/* Events Grid */
+.events-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.event-card {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 560px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+    border: 1px solid #333;
+}
+
+.coming-soon-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.coming-soon-overlay span {
+    background-color: #ff9acd;
+    color: white;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 24px;
+    transform: rotate(-15deg);
+    box-shadow: 0 0 20px #ff88c3;
+    letter-spacing: 2px;
+}
+
+.event-image {
+    height: 300px;
+    overflow: hidden;
+}
+
+.event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.event-content {
+    padding: 30px;
+    text-align: left;
+}
+
+.event-content h3 {
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.event-date {
+    color: #ff9acd;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.event-features {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.event-features li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 8px;
+}
+
+.event-features li:before {
+    content: "✓";
+    color: #ff9acd;
+    position: absolute;
+    left: 0;
+}
+
+.event-button, .vip-button {
+    display: inline-block;
+    background-color: #ff9acd;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: all 0.3s;
+}
+
+.event-button:hover, .vip-button:hover {
+    background-color: #ff9acd;
+    transform: translateY(-2px);
+}
+
+/* VIP Section */
+.vip-section {
+    background-color: #1e1e1e;
+    padding: 50px;
+    border-radius: 10px;
+    margin-bottom: 60px;
+    border: 1px solid #333;
+}
+
+.vip-section h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.vip-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.vip-card {
+    flex: 1;
+    min-width: 300px;
+    position: relative;
+}
+
+.vip-card img {
+    border-radius: 15px;
+    max-width: 100%;
+}
+
+.vip-benefits {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+}
+
+.vip-benefits h3 {
+    color: #ff9acd;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.benefits-list {
+    list-style: none;
+    margin-bottom: 25px;
+}
+
+.benefits-list li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 12px;
+}
+
+.benefits-list li:before {
+    content: "★";
+    color: #ff9acd;
+    position: absolute;
+    left: 0;
+}
+
+/* Merchandise Preview Styling */
+.merch-preview {
+    padding: 40px 0;
+}
+
+.merch-preview h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.merch-preview p {
+    color: #aaaaaa;
+    margin-bottom: 40px;
+}
+
+.merch-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.merch-item {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    border: 1px solid #333;
+    transition: transform 0.3s;
+    position: relative; /* Added for positioning the enlarged image */
+}
+
+.merch-item:hover {
+    transform: translateY(-10px);
+}
+
+.merch-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 1/1; /* Maintains square aspect ratio */
+    transition: all 0.3s ease;
+}
+
+/* Image hover effect */
+.merch-item .image-container {
+    position: relative;
+    overflow: visible;
+}
+
+.merch-item:hover .image-zoom {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.image-zoom {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    width: 300px; /* Larger size for the zoomed image */
+    height: 300px;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    pointer-events: none;
+    background-color: #1e1e1e;
+    padding: 10px;
+    border: 2px solid #ff6b6b;
+}
+
+.image-zoom img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 3px;
+    margin-bottom: 0;
+}
+
+.merch-item h4 {
+    color: #ffffff;
+    font-size: 18px;
+}
+
+/* Additional responsive adjustments for merchandise section */
+@media (max-width: 768px) {
+    .merch-grid {
+        gap: 20px;
+    }
+    
+    .merch-item {
+        width: calc(50% - 20px);
+        min-width: 140px;
+        padding: 15px;
+    }
+    
+    .image-zoom {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .merch-grid {
+        gap: 15px;
+    }
+    
+    .merch-item {
+        width: calc(50% - 15px);
+        min-width: 120px;
+        padding: 10px;
+    }
+    
+    .merch-item h4 {
+        font-size: 16px;
+    }
+    
+    .image-zoom {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .vip-container {
+        flex-direction: column;
+    }
+    
+    .event-card {
+        max-width: 100%;
+    }
+    
+    .vip-section {
+        padding: 30px 20px;
+    }
+}
+
+/* Contact Section with Improved Icons */
+.contact-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+}
+
+.contact-info {
+    background-color: rgba(17, 17, 17, 0.8);
+    padding: 40px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 154, 205, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.contact-info:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 154, 205, 0.1);
+}
+
+.contact-info h3 {
+    margin-bottom: 30px;
+    font-size: 24px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.contact-info h3:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--primary);
+}
+
+.contact-list {
+    list-style: none;
+}
+
+.contact-item {
+    margin-bottom: 25px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 154, 205, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-size: 20px;
+    color: var(--primary);
+    transition: var(--transition);
+}
+
+.contact-item:hover .contact-icon {
+    background-color: var(--primary);
+    color: var(--dark);
+    transform: scale(1.1);
+}
+
+.contact-info-text {
+    flex: 1;
+}
+
+.contact-info-text h4 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: var(--light);
+}
+
+.contact-info-text p {
+    color: #ccc;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.social-links {
+    margin-top: 40px;
+}
+
+.social-links h4 {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: var(--light);
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--light);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.social-icons a:hover {
+    background-color: var(--primary);
+    transform: translateY(-5px);
+    color: var(--dark);
+    box-shadow: 0 5px 15px rgba(255, 154, 205, 0.3);
+}
+
+.contact-form {
+    background-color: rgba(17, 17, 17, 0.8);
+    padding: 40px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 154, 205, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.contact-form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 154, 205, 0.1);
+}
+
+.contact-form h3 {
+    margin-bottom: 30px;
+    font-size: 24px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.contact-form h3:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--primary);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #ccc;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    color: var(--light);
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 154, 205, 0.2);
+}
+
+.form-group textarea {
+    height: 150px;
+    resize: none;
+}
+
+/* Footer */
+footer {
+    background-color: var(--darker);
+    padding: 80px 0 20px;
+    border-top: 1px solid rgba(255, 154, 205, 0.1);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.footer-column h3 {
+    margin-bottom: 25px;
+    font-size: 20px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.footer-column h3:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background-color: var(--primary);
+}
+
+.footer-column p {
+    color: #aaa;
+    margin-bottom: 15px;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #aaa;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    color: var(--primary);
+    padding-left: 5px;
+}
+
+.footer-column a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-column a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: #777;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.footer-bottom .social-icons {
+    justify-content: center;
+    margin: 20px 0;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 350px;
+    height: 100vh;
+    background-color: var(--darker);
+    z-index: 999;
+    overflow-y: auto;
+    transition: all 0.4s ease;
+    padding: 70px 30px 30px;
+    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-menu.active {
+    right: 0;
+}
+
+.mobile-menu .close-btn {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: 24px;
+    color: var(--light);
+    cursor: pointer;
+}
+
+.mobile-menu ul {
+    list-style: none;
+}
+
+.mobile-menu ul li {
+    margin-bottom: 25px;
+}
+
+.mobile-menu ul li a {
+    color: var(--light);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu ul li a:hover {
+    color: var(--primary);
+    padding-left: 5px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .hero-content h1 {
+        font-size: 48px;
+    }
+    
+    .section {
+        padding: 80px 0;
+    }
+    
+    .section-title h2 {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    .hero-content h1 {
+        font-size: 36px;
+    }
+    
+    .section {
+        padding: 60px 0;
+    }
+    
+    .section-title h2 {
+        font-size: 28px;
+    }
+    
+    .setup-content {
+        flex-direction: column;
+    }
+    
+    .hero-btns {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .pricing-card {
+        max-width: 350px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 28px;
+    }
+    
+    .hero-content p {
+        font-size: 16px;
+    }
+    
+    .section-title h2 {
+        font-size: 24px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+    
+    .contact-info-text h4 {
+        font-size: 16px;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="close-btn"><i class="fas fa-times"></i></div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#setup">Gaming Stations</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#" class="btn">Book Now</a></li>
+        </ul>
+    </div>
+    <div class="overlay"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="container navbar">
+            <a href="#" class="logo">TRICKSTERS<span>GAMING</span></a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#setup">Gaming Stations</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" class="btn">Book Now</a></li>
+            </ul>
+            <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>GAMING<span class="highlight"> EVOLVED</span></h1>
+            <p>Your premier destination for competitive CS2 gaming. Experience top-tier equipment, professional environment, and a community of dedicated players.</p>
+            <div class="hero-btns">
+                <a href="#pricing" class="btn">Our Pricing</a>
+                <a href="#contact" class="btn btn-outlined">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why <span class="highlight">Tricksters</span></h2>
+                <p>We're building more than just a gaming café - we're creating a community centered around competitive gaming excellence</p>
+            </div>
+            <div class="cards-grid">
+                <div class="feature-card fade-in">
+                    <div class="icon"><i class="fas fa-gamepad"></i></div>
+                    <h3>Elite Gaming Experience</h3>
+                    <p>Premium hardware configurations specifically optimized for competitive Counter-Strike 2. Every detail matters when victory is on the line.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="icon"><i class="fas fa-trophy"></i></div>
+                    <h3>CS2 Specialized</h3>
+                    <p>Our primary focus is Counter-Strike 2, with optimized setups, regular tournaments, and a community of like-minded competitive players.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="icon"><i class="fas fa-bolt"></i></div>
+                    <h3>High-Performance Network</h3>
+                    <p>Experience gaming with ultra-low ping on our dedicated fiber connection, giving you the competitive edge you need.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="icon"><i class="fas fa-users"></i></div>
+                    <h3>Growing Community</h3>
+                    <p>Join our thriving community of competitive and casual gamers. Make connections, form teams, and elevate your gameplay.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="section section-dark">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our <span class="highlight">Pricing</span></h2>
+                <p>Affordable gaming packages for every type of player</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card fade-in">
+                    <div class="coming-soon">
+                        <span>Coming Soon</span>
+                    </div>
+                    <div class="pricing-header">
+                        <h3>Standard Gaming</h3>
+                        <div class="price">£5<span>/hour</span></div>
+                        <p>Perfect for casual gaming sessions</p>
+                    </div>
+                    <div class="pricing-body">
+                        <ul class="feature-list">
+                            <li>Access to standard gaming stations</li>
+                            <li>Basic peripherals included</li>
+                            <li>Access to all installed games</li>
+                            <li>Free water</li>
+                            <li>Member discounts available</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-footer">
+                        <a href="#" class="btn">Book Now</a>
+                    </div>
+                </div>
+                <div class="pricing-card fade-in">
+                    <div class="coming-soon">
+                        <span>Coming Soon</span>
+                    </div>
+                    <div class="pricing-header">
+                        <h3>Premium Gaming</h3>
+                        <div class="price">£7<span>/hour</span></div>
+                        <p>Enhanced gaming experience</p>
+                    </div>
+                    <div class="pricing-body">
+                        <ul class="feature-list">
+                            <li>Access to premium gaming stations</li>
+                            <li>High-quality peripherals</li>
+                            <li>144Hz gaming monitors</li>
+                            <li>Priority booking</li>
+                            <li>Free soft drinks</li>
+                            <li>Discounted snacks</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-footer">
+                        <a href="#" class="btn">Book Now</a>
+                    </div>
+                </div>
+                <div class="pricing-card available fade-in">
+                    <div class="available-tag">Available Now</div>
+                    <div class="pricing-header">
+                        <h3>VIP Experience</h3>
+                        <div class="price">£9<span>/hour</span></div>
+                        <p>For serious competitive gamers</p>
+                    </div>
+                    <div class="pricing-body">
+                        <ul class="feature-list">
+                            <li>Premium gaming stations</li>
+                            <li>Pro-grade peripherals</li>
+                            <li>360Hz gaming monitors</li>
+                            <li>Optimized CS2 configuration</li>
+                            <li>Priority booking</li>
+                            <li>Free energy drink</li>
+                            <li>Exclusive VIP lounge access</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-footer">
+                        <a href="#" class="btn">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Setup Section -->
+    <section id="setup" class="section">
+        <div class="container setup-content">
+            <div class="setup-img fade-in">
+                <img src="image1.png" alt="Gaming Setup">
+            </div>
+            <div class="setup-text fade-in">
+                <h2>Premium <span class="highlight">Gaming Stations</span></h2>
+                <p>Our VIP section features 10 high-end gaming stations specifically configured for competitive gaming. Every component has been carefully selected to give you the competitive edge.</p>
+                <ul class="setup-list">
+                    <li>High-end gaming PCs with latest RTX graphics cards</li>
+                    <li>360Hz gaming monitors for ultra-smooth gameplay</li>
+                    <li>Professional mechanical keyboards and gaming mice</li>
+                    <li>Noise-cancelling headsets with crystal clear audio</li>
+                    <li>Ergonomic gaming chairs for extended comfort</li>
+                    <li>Optimized network with minimal ping for CS2</li>
+                    <li>Customizable peripheral settings for each player</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section section-dark gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our <span class="highlight">Space</span></h2>
+                <p>Take a look at our gaming environment</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item fade-in">
+                    <img src="image1.png" alt="Gaming Setup">
+                    <div class="gallery-overlay">
+                        <h3>VIP Gaming Stations</h3>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="image2.png" alt="Lounge Area">
+                    <div class="gallery-overlay">
+                        <h3>Lounge Area</h3>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="image3.png" alt="Tournament Area">
+                    <div class="gallery-overlay">
+                        <h3>Tournament Setup</h3>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="image4.png" alt="Refreshment Bar">
+                    <div class="gallery-overlay">
+                        <h3>Refreshment Bar</h3>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="image5.png" alt="Streaming Station">
+                    <div class="gallery-overlay">
+                        <h3>Streaming Station</h3>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="image6.png" alt="Reception Area">
+                    <div class="gallery-overlay">
+                        <h3>Reception Area</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta">
+        <div class="container cta-content">
+            <h2>Wanna <span class="highlight">Help Us Out?</span></h2>
+            <p>Check out our project and what we have in mind and get in touch with us!</p>
+            <a href="#contact" class="btn">Check Project</a>
+        </div>
+    </section>
+
+    <!-- EVENTS SECTION -->
+<section class="events-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>OUR <span>EVENTS</span></h2>
+            <span class="pink-underline"></span>
+            <p>Join our gaming community for exclusive tournaments and special events</p>
+        </div>
+        
+        <div class="events-grid">
+            <!-- Event 1 -->
+            <div class="event-card">
+                <div class="coming-soon-overlay">
+                    <span>COMING SOON</span>
+                </div>
+                <div class="event-image">
+                    <img src="cs2_banner_tournament.jpg" alt="Tournament">
+                </div>
+                <div class="event-content">
+                    <h3>Grand Opening Tournament</h3>
+                    <p class="event-date">Our first official event</p>
+                    <p>Compete in our inaugural tournament featuring multiple game categories and amazing prizes. Sign up early for a chance to be part of gaming history!</p>
+                    <ul class="event-features">
+                        <li>£1,000 prize pool</li>
+                        <li>Multiple game categories</li>
+                        <li>Live streaming</li>
+                        <li>Professional commentary</li>
+                    </ul>
+                    <a href="#" class="event-button">Get Notified</a>
+                </div>
+            </div>
+            
+            <!-- Event 2 -->
+            <div class="event-card">
+                <div class="coming-soon-overlay">
+                    <span>COMING SOON</span>
+                </div>
+                <div class="event-image">
+                    <img src="cs2_banner_tournament.jpg" alt="Community Night">
+                </div>
+                <div class="event-content">
+                    <h3>Community Game Night</h3>
+                    <p class="event-date">Weekly social gaming</p>
+                    <p>Join our weekly social gaming nights where you can meet other gamers, try new titles, and enjoy special discounts on food and drinks.</p>
+                    <ul class="event-features">
+                        <li>Casual gaming atmosphere</li>
+                        <li>Game showcases</li>
+                        <li>Networking opportunities</li>
+                        <li>Food and drink specials</li>
+                    </ul>
+                    <a href="#" class="event-button">Get Notified</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- VIP Card Section -->
+        <div class="vip-section">
+            <h2>EXCLUSIVE <span>VIP CARD</span></h2>
+            <div class="vip-container">
+                <div class="vip-card">
+                    <img src="card.png" alt="Tricksters VIP Card">
+                </div>
+                <div class="vip-benefits">
+                    <h3>VIP Benefits</h3>
+                    <ul class="benefits-list">
+                        <li>Priority booking for all events</li>
+                        <li>10% discount on all gaming sessions</li>
+                        <li>Exclusive access to VIP lounge</li>
+                        <li>Free merchandise welcome pack</li>
+                        <li>Monthly members-only tournaments</li>
+                        <li>Complimentary snacks and drinks</li>
+                    </ul>
+                    <a href="#" class="vip-button">Join the Waitlist</a>
+                </div>
+            </div>
+        </div>
+        
+<!-- Merchandise Preview -->
+<div class="merch-preview">
+    <h2>TRICKSTERS <span>MERCH</span></h2>
+    <p>Show your gaming pride with our exclusive merchandise collection</p>
+    <div class="merch-grid">
+        <div class="merch-item">
+            <div class="image-container">
+                <img src="tshirt_tricksters.png" alt="Tricksters T-shirt">
+                <div class="image-zoom">
+                    <img src="tshirt_tricksters.png" alt="Tricksters T-shirt">
+                </div>
+            </div>
+            <h4>Premium Gaming Tees</h4>
+        </div>
+        <div class="merch-item">
+            <div class="image-container">
+                <img src="tricksters_hoodies.jpg" alt="Tricksters Hoodie">
+                <div class="image-zoom">
+                    <img src="tricksters_hoodies.jpg" alt="Tricksters Hoodie">
+                </div>
+            </div>
+            <h4>Gamer Hoodies</h4>
+        </div>
+        <div class="merch-item">
+            <div class="image-container">
+                <img src="cap.jpg" alt="Tricksters Cap">
+                <div class="image-zoom">
+                    <img src="cap.jpg" alt="Tricksters Cap">
+                </div>
+            </div>
+            <h4>Branded Caps</h4>
+        </div>
+        <div class="merch-item">
+            <div class="image-container">
+                <img src="mug.png" alt="Tricksters Mug">
+                <div class="image-zoom">
+                    <img src="mug.png" alt="Tricksters Mug">
+                </div>
+            </div>
+            <h4>Gaming Mugs</h4>
+        </div>
+    </div>
+</div>
+
+    <!-- Contact Section with Improved Icons -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In <span class="highlight">Touch</span></h2>
+                <p>Have questions? Want to book a session? Interested in investing? We'd love to hear from you!</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info fade-in">
+                    <h3>Contact Information</h3>
+                    <div class="contact-list">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-info-text">
+                                <h4>Location</h4>
+                                <p>123 Gaming Street, Digital City<br>London, UK</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-info-text">
+                                <h4>Phone</h4>
+                                <p>+44 (0) 123 456 7890</p>
+                                <p>+44 (0) 987 654 3210</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-info-text">
+                                <h4>Email</h4>
+                                <p>info@trickstersgaminghub.com</p>
+                                <p>bookings@trickstersgaminghub.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-info-text">
+                                <h4>Opening Hours</h4>
+                                <p>Monday - Friday: 10AM - 12AM</p>
+                                <p>Saturday - Sunday: 9AM - 2AM</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <h4>Follow Us</h4>
+                        <ul class="social-icons">
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fab fa-discord"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitch"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="contact-form fade-in">
+                    <h3>Send Us a Message</h3>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="from_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="reply_to" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+                
+                <!-- Add EmailJS Library -->
+                <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+                
+<!-- EmailJS Implementation -->
+<script>
+    (function() {
+        // Initialize EmailJS
+        emailjs.init("w4RY3UL6MQK0CtzPT");
+        
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Show loading state
+            const btn = this.querySelector('button');
+            const originalText = btn.textContent;
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
+            
+            // Template parameters with to_email explicitly included
+            const templateParams = {
+                from_name: document.getElementById('name').value,
+                reply_to: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value,
+                to_email: "tmihnea0@gmail.com" // Add recipient email explicitly
+            };
+            
+            // Make sure to use the correct template ID consistently
+            const serviceID = 'service_tnni2pe';
+            const templateID = 'template_2doyfrh'; // Use this ID consistently
+            
+            // Send the email
+            emailjs.send(serviceID, templateID, templateParams)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    
+                    // Show success message
+                    const form = document.getElementById('contact-form');
+                    const successMessage = document.createElement('div');
+                    successMessage.className = 'success-message';
+                    successMessage.textContent = 'Thank you for your message! We will get back to you soon.';
+                    successMessage.style.color = '#ff9acd';
+                    successMessage.style.padding = '15px 0';
+                    successMessage.style.fontWeight = 'bold';
+                    form.reset();
+                    form.appendChild(successMessage);
+                    
+                    // Reset button
+                    btn.textContent = originalText;
+                    btn.disabled = false;
+                    
+                    // Remove success message after 5 seconds
+                    setTimeout(() => {
+                        successMessage.remove();
+                    }, 5000);
+                }, function(error) {
+                    // Show detailed error message
+                    console.log('FAILED...', error);
+                    alert('Error: ' + JSON.stringify(error));
+                    
+                    // Reset button
+                    btn.textContent = originalText;
+                    btn.disabled = false;
+                });
+        });
+    })();
+</script>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Tricksters Gaming Hub</h3>
+                    <p>The premier destination for competitive CS2 gamers and gaming enthusiasts.</p>
+                    <p>Building a community, one game at a time.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#setup">Gaming Stations</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>For Investors</h3>
+                    <p>We're actively seeking investors to help us expand our operations. Business plan available upon request.</p>
+                    <p><a href="#contact">Contact us for more information</a></p>
+                </div>
+                <div class="footer-column">
+                    <h3>Opening Hours</h3>
+                    <p>Monday - Friday: 10AM - 12AM</p>
+                    <p>Saturday & Sunday: 9AM - 2AM</p>
+                    <p>VIP bookings available 24/7</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <ul class="social-icons">
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fab fa-discord"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitch"></i></a></li>
+                </ul>
+                <p>&copy; 2025 Tricksters Gaming Hub. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+        <!-- JavaScript for animations and mobile menu -->
+        <script>
+// Wait for DOM to fully load
+document.addEventListener('DOMContentLoaded', function() {
+    // Cache DOM elements
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const closeBtn = document.querySelector('.mobile-menu .close-btn');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const overlay = document.querySelector('.overlay');
+    const mobileMenuLinks = document.querySelectorAll('.mobile-menu ul li a');
+    const header = document.querySelector('header');
+    const fadeElements = document.querySelectorAll('.fade-in');
+    const pricingCards = document.querySelectorAll('.pricing-card');
+    const contactForm = document.querySelector('.contact-form form');
+    
+    // Mobile Menu Functionality
+    function openMobileMenu() {
+        mobileMenu.classList.add('active');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+    }
+    
+    function closeMobileMenu() {
+        mobileMenu.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = 'visible'; // Re-enable scrolling
+    }
+    
+    if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openMobileMenu);
+    if (closeBtn) closeBtn.addEventListener('click', closeMobileMenu);
+    if (overlay) overlay.addEventListener('click', closeMobileMenu);
+    
+    // Close menu when clicking on mobile menu links
+    if (mobileMenuLinks) {
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+    }
+    
+    // Smooth Scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            if (this.getAttribute('href') !== '#') {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    const headerHeight = header ? header.offsetHeight : 0;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    });
+    
+    // Scroll Animations for Fade In Elements
+    function checkFade() {
+        if (fadeElements) {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 50) {
+                    element.classList.add('active');
+                }
+            });
+        }
+    }
+    
+    // Run fade check on page load
+    checkFade();
+    
+    // Run fade check on scroll
+    window.addEventListener('scroll', checkFade);
+    
+    // Pricing cards hover effects
+    if (pricingCards) {
+        pricingCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                pricingCards.forEach(c => c.style.transform = 'scale(0.95)');
+                this.style.transform = 'translateY(-15px) scale(1.05)';
+                this.style.zIndex = '1';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                pricingCards.forEach(c => {
+                    c.style.transform = '';
+                    c.style.zIndex = '';
+                });
+            });
+        });
+    }
+    
+    // Form validation and submission
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Basic validation
+            let valid = true;
+            const name = document.getElementById('name');
+            const email = document.getElementById('email');
+            const message = document.getElementById('message');
+            
+            // Reset previous error messages
+            document.querySelectorAll('.error-message').forEach(el => el.remove());
+            
+            // Validate name
+            if (!name.value.trim()) {
+                addError(name, 'Please enter your name');
+                valid = false;
+            }
+            
+            // Validate email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email.value.trim())) {
+                addError(email, 'Please enter a valid email address');
+                valid = false;
+            }
+            
+            // Validate message
+            if (!message.value.trim() || message.value.trim().length < 10) {
+                addError(message, 'Please enter a message (at least 10 characters)');
+                valid = false;
+            }
+            
+            // If valid, show success message
+            if (valid) {
+                const formElements = contactForm.elements;
+                for (let i = 0; i < formElements.length; i++) {
+                    formElements[i].disabled = true;
+                }
+                
+                const successMessage = document.createElement('div');
+                successMessage.className = 'success-message';
+                successMessage.textContent = 'Thank you for your message! We will get back to you soon.';
+                successMessage.style.color = 'var(--primary)';
+                successMessage.style.padding = '15px 0';
+                successMessage.style.fontWeight = 'bold';
+                
+                contactForm.appendChild(successMessage);
+                
+                // Reset form after 3 seconds
+                setTimeout(() => {
+                    contactForm.reset();
+                    successMessage.remove();
+                    const formElements = contactForm.elements;
+                    for (let i = 0; i < formElements.length; i++) {
+                        formElements[i].disabled = false;
+                    }
+                }, 3000);
+            }
+        });
+        
+        function addError(element, message) {
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message';
+            errorDiv.textContent = message;
+            errorDiv.style.color = '#ff4444';
+            errorDiv.style.fontSize = '12px';
+            errorDiv.style.marginTop = '5px';
+            
+            element.parentNode.appendChild(errorDiv);
+            element.style.borderColor = '#ff4444';
+            
+            element.addEventListener('input', function() {
+                const errorEl = element.parentNode.querySelector('.error-message');
+                if (errorEl) errorEl.remove();
+                element.style.borderColor = '';
+            });
+        }
+    }
+    
+    // Parallax effect for hero section
+    const hero = document.querySelector('.hero');
+    if (hero) {
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.pageYOffset;
+            hero.style.backgroundPosition = `center ${scrollPosition * 0.5}px`;
+        });
+    }
+    
+    // Scroll-based navbar effects
+    let lastScrollTop = 0;
+    window.addEventListener('scroll', function() {
+        const currentScroll = window.pageYOffset;
+        
+        if (header) {
+            // Add/remove shadow and background opacity based on scroll position
+            if (currentScroll > 50) {
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.3)';
+                header.style.backgroundColor = 'rgba(5, 5, 5, 0.95)';
+            } else {
+                header.style.boxShadow = 'none';
+                header.style.backgroundColor = 'rgba(5, 5, 5, 0.95)';
+            }
+        }
+        
+        lastScrollTop = currentScroll;
+    });
+    
+    // Animation for numbers (if used)
+    function animateCounter(element, target, duration = 2000) {
+        let start = 0;
+        const increment = target / (duration / 16);
+        
+        function updateCount() {
+            start += increment;
+            if (start > target) start = target;
+            
+            element.textContent = Math.floor(start);
+            
+            if (start < target) {
+                requestAnimationFrame(updateCount);
+            }
+        }
+        
+        updateCount();
+    }
+    
+    // Initialize counters with Intersection Observer if they exist
+    const counters = document.querySelectorAll('.counter');
+    if (counters.length > 0) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = parseInt(entry.target.getAttribute('data-target'));
+                    animateCounter(entry.target, target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        counters.forEach(counter => {
+            observer.observe(counter);
+        });
+    }
+    
+    // Add active class to current section in navbar
+    function setActiveNav() {
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-links a:not(.btn)');
+        
+        const scrollPosition = window.scrollY + header.offsetHeight + 50;
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+            
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + sectionId) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }
+    
+    window.addEventListener('scroll', setActiveNav);
+    
+    // Initialize any sliders if they exist (using native JS, no dependencies)
+    function initSliders() {
+        const sliders = document.querySelectorAll('.slider');
+        
+        sliders.forEach(slider => {
+            const sliderTrack = slider.querySelector('.slider-track');
+            const slides = slider.querySelectorAll('.slide');
+            const nextBtn = slider.querySelector('.slider-next');
+            const prevBtn = slider.querySelector('.slider-prev');
+            const dots = slider.querySelectorAll('.slider-dot');
+            
+            let currentIndex = 0;
+            let startX;
+            let currentX;
+            
+            function updateSlider() {
+                if (sliderTrack) {
+                    sliderTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+                }
+                
+                if (dots.length) {
+                    dots.forEach((dot, index) => {
+                        dot.classList.toggle('active', index === currentIndex);
+                    });
+                }
+            }
+            
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % slides.length;
+                updateSlider();
+            }
+            
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                updateSlider();
+            }
+            
+            if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+            if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+            
+            // Touch events for mobile swiping
+            slider.addEventListener('touchstart', e => {
+                startX = e.touches[0].clientX;
+            });
+            
+            slider.addEventListener('touchmove', e => {
+                if (!startX) return;
+                currentX = e.touches[0].clientX;
+                const diff = startX - currentX;
+                
+                // Prevent overscrolling
+                if (Math.abs(diff) > 5) {
+                    e.preventDefault();
+                }
+            });
+            
+            slider.addEventListener('touchend', e => {
+                if (!startX || !currentX) return;
+                const diff = startX - currentX;
+                
+                if (diff > 50) {
+                    nextSlide();
+                } else if (diff < -50) {
+                    prevSlide();
+                }
+                
+                startX = null;
+                currentX = null;
+            });
+            
+            // Click events for dots
+            if (dots.length) {
+                dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => {
+                        currentIndex = index;
+                        updateSlider();
+                    });
+                });
+            }
+            
+            // Auto-advance slides if data-auto attribute exists
+            const autoAdvance = slider.getAttribute('data-auto');
+            if (autoAdvance && parseInt(autoAdvance) > 0) {
+                setInterval(nextSlide, parseInt(autoAdvance));
+            }
+        });
+    }
+    
+    // Initialize sliders if they exist
+    initSliders();
+});
+        </script>
+    </body>
+    </html>

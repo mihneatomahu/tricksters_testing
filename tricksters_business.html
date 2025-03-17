@@ -1,0 +1,1727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Our Project | Tricksters Gaming Hub</title>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #ff9acd;
+            --primary-dark: #e681b4;
+            --secondary: #00e1ff;
+            --dark: #0c0c0c;
+            --darker: #050505;
+            --light: #f5f5f5;
+            --gray: #333333;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', 'Segoe UI', sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navbar - VEED.io inspired */
+        header {
+            padding: 0;
+            background-color: rgba(5, 5, 5, 0.95);
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+            height: 70px;
+            display: flex;
+            align-items: center;
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+        }
+        
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--light);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease;
+            letter-spacing: 1px;
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .logo span {
+            color: var(--primary);
+            margin-left: 5px;
+            font-weight: 800;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            height: 100%;
+        }
+        
+        .nav-links li {
+            margin-left: 5px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
+            padding: 0 20px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        .nav-links a:not(.btn):after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:not(.btn):hover {
+            color: var(--primary);
+        }
+        
+        .nav-links a:not(.btn):hover:after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: var(--light);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--dark);
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .nav-links .btn {
+            margin-left: 15px;
+            height: auto;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 154, 205, 0.3);
+        }
+        
+        /* Page Header */
+        .page-header {
+            height: 50vh;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('/api/placeholder/1920/1080') center/cover no-repeat;
+            position: relative;
+            padding-top: 70px;
+        }
+        
+        .page-header:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(255, 154, 205, 0.2) 0%, rgba(12, 12, 12, 0.9) 70%);
+        }
+        
+        .page-header-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .page-header-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 800;
+        }
+        
+        .page-header-content p {
+            font-size: 18px;
+            color: #ccc;
+            font-weight: 300;
+        }
+        
+        .highlight {
+            color: var(--primary);
+        }
+        
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+            position: relative;
+        }
+        
+        .section-dark {
+            background-color: var(--darker);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+        
+        .section-title p {
+            color: #aaa;
+            max-width: 600px;
+            margin: 20px auto 0;
+            font-weight: 300;
+        }
+        
+        /* Content section */
+        .content-section {
+            margin-bottom: 50px;
+        }
+        
+        .content-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .content-section h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .content-section p {
+            margin-bottom: 15px;
+            color: #ccc;
+            font-weight: 300;
+            font-size: 16px;
+        }
+        
+        .content-section ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .content-section li {
+            margin-bottom: 10px;
+            color: #ccc;
+            font-weight: 300;
+        }
+        
+        /* Social Media Grid */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .social-card {
+            background-color: rgba(17, 17, 17, 0.8);
+            padding: 30px;
+            border-radius: 5px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 154, 205, 0.1);
+        }
+        
+        .social-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 154, 205, 0.3);
+            box-shadow: 0 10px 25px rgba(255, 154, 205, 0.1);
+        }
+        
+        .social-card .icon {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .social-card h4 {
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        .social-card p {
+            color: #aaa;
+            font-size: 15px;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+        
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .team-card {
+            background-color: rgba(17, 17, 17, 0.8);
+            border-radius: 5px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 154, 205, 0.1);
+        }
+        
+        .team-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 154, 205, 0.3);
+            box-shadow: 0 10px 25px rgba(255, 154, 205, 0.1);
+        }
+        
+        .team-img {
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .team-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .team-card:hover .team-img img {
+            transform: scale(1.1);
+        }
+        
+        .team-info {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .team-info h4 {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+        
+        .team-info span {
+            display: block;
+            color: var(--primary);
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .team-info p {
+            color: #aaa;
+            font-size: 14px;
+            font-weight: 300;
+        }
+        
+        .team-social {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+            gap: 10px;
+        }
+        
+        .team-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--light);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        
+        .team-social a:hover {
+            background-color: var(--primary);
+            color: var(--dark);
+        }
+        
+        /* Location Section */
+        .location-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 30px;
+        }
+        
+        .location-info {
+            padding: 30px;
+            background-color: rgba(17, 17, 17, 0.8);
+            border-radius: 5px;
+            border: 1px solid rgba(255, 154, 205, 0.1);
+        }
+        
+        .location-info h3 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: var(--primary);
+        }
+        
+        .location-details {
+            margin-bottom: 30px;
+        }
+        
+        .location-details h4 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        .location-details p {
+            color: #ccc;
+            font-weight: 300;
+            margin-bottom: 5px;
+        }
+        
+        .location-map {
+            height: 400px;
+            background-color: #111;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .location-map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Documentation Request Form */
+        .docs-form {
+            background-color: rgba(17, 17, 17, 0.8);
+            padding: 40px;
+            border-radius: 5px;
+            border: 1px solid rgba(255, 154, 205, 0.1);
+            margin-top: 30px;
+        }
+        
+        .docs-form h3 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #ccc;
+            font-size: 14px;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            color: var(--light);
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 10px rgba(255, 154, 205, 0.2);
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: none;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--darker);
+            padding: 60px 0 20px;
+            border-top: 1px solid rgba(255, 154, 205, 0.1);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 20px;
+            font-size: 18px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+        
+        .footer-column p {
+            color: #aaa;
+            margin-bottom: 10px;
+            font-weight: 300;
+            font-size: 14px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 300;
+            font-size: 14px;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            list-style: none;
+        }
+        
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--light);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--primary);
+            color: var(--dark);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: #777;
+            font-size: 14px;
+            font-weight: 300;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .section {
+                padding: 60px 0;
+            }
+            
+            .page-header-content h1 {
+                font-size: 36px;
+            }
+            
+            .location-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .page-header-content h1 {
+                font-size: 32px;
+            }
+            
+            .location-content {
+                gap: 30px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .page-header-content h1 {
+                font-size: 28px;
+            }
+            
+            .page-header-content p {
+                font-size: 16px;
+            }
+            
+            .section-title h2 {
+                font-size: 24px;
+            }
+            
+            .location-info {
+                padding: 20px;
+            }
+            
+            .docs-form {
+                padding: 25px;
+            }
+        }
+        /* Future Plans Section Styles */
+.plans-grid {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+.plans-card {
+    background-color: rgba(17, 17, 17, 0.8);
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 154, 205, 0.1);
+}
+
+.plans-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 154, 205, 0.1);
+    border-color: rgba(255, 154, 205, 0.3);
+}
+
+.plans-img {
+    height: 350px;
+    position: relative;
+    overflow: hidden;
+}
+
+.plans-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.plans-card:hover .plans-img img {
+    transform: scale(1.05);
+}
+
+.plans-overlay {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: var(--primary);
+    color: var(--dark);
+    padding: 8px 15px;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    z-index: 1;
+}
+
+.plans-content {
+    padding: 30px;
+}
+
+.plans-content h3 {
+    font-size: 26px;
+    margin-bottom: 15px;
+    color: var(--primary);
+}
+
+.plans-content h4 {
+    font-size: 18px;
+    margin: 25px 0 15px;
+    color: var(--light);
+}
+
+.plans-content p {
+    color: #ccc;
+    margin-bottom: 15px;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.plans-content ul {
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+.plans-content li {
+    color: #ccc;
+    font-weight: 300;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.plans-cta {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.additional-plans {
+    background-color: rgba(17, 17, 17, 0.8);
+    border-radius: 5px;
+    padding: 30px;
+    border: 1px solid rgba(255, 154, 205, 0.1);
+    transition: all 0.3s ease;
+}
+
+.additional-plans:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 154, 205, 0.1);
+    border-color: rgba(255, 154, 205, 0.3);
+}
+
+.additional-plans h3 {
+    font-size: 24px;
+    margin-bottom: 25px;
+    color: var(--primary);
+    text-align: center;
+}
+
+.plans-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.plan-item {
+    display: flex;
+    align-items: flex-start;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.plan-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 154, 205, 0.1);
+}
+
+.plan-icon {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 154, 205, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.plan-icon i {
+    font-size: 20px;
+    color: var(--primary);
+}
+
+.plan-details {
+    flex: 1;
+}
+
+.plan-details h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: var(--light);
+}
+
+.plan-details p {
+    color: #ccc;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.community-note {
+    margin-top: 50px;
+    padding: 30px;
+    background-color: rgba(17, 17, 17, 0.8);
+    border-radius: 5px;
+    border: 1px solid rgba(255, 154, 205, 0.1);
+    text-align: center;
+}
+
+.community-note h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: var(--primary);
+}
+
+.community-note p {
+    color: #ccc;
+    font-weight: 300;
+    margin-bottom: 15px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.community-note a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.community-note a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .plans-img {
+        height: 300px;
+    }
+    
+    .plans-content {
+        padding: 25px;
+    }
+    
+    .plans-content h3 {
+        font-size: 22px;
+    }
+    
+    .plan-item {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .plans-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .plans-content {
+        padding: 20px;
+    }
+    
+    .plan-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .plan-icon i {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .plans-img {
+        height: 250px;
+    }
+    
+    .plans-content h3 {
+        font-size: 20px;
+    }
+    
+    .community-note {
+        padding: 20px;
+    }
+}
+    </style>
+    </head>
+    <body>
+        <!-- Header -->
+        <header>
+            <div class="container navbar">
+                <a href="index.html" class="logo">TRICKSTERS<span>GAMING</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#pricing">Pricing</a></li>
+                    <li><a href="index.html#setup">Gaming Stations</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="#" class="btn">Book Now</a></li>
+                </ul>
+                <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
+            </div>
+        </header>
+    
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container page-header-content">
+                <h1>About Our <span class="highlight">Project</span></h1>
+                <p>Learn more about the Tricksters Gaming Hub, our mission, and how we're building the ultimate competitive gaming environment</p>
+            </div>
+        </section>
+    
+        <!-- What We Need Section -->
+        <section id="needs" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>What We <span class="highlight">Need</span></h2>
+                    <p>Our roadmap to creating the ultimate CS2 competitive gaming environment</p>
+                </div>
+                
+                <div class="content-section">
+                    <p>Tricksters Gaming Hub is in the exciting early stages of development. We're currently expanding our VIP gaming section and building our community while working towards a full-scale competitive gaming hub. To achieve our vision, we're looking for the following support:</p>
+                    
+                    <h3>Equipment & Technology</h3>
+                    <ul>
+                        <li><strong>Gaming Hardware:</strong> High-end PCs equipped with the latest RTX graphics cards, processors, and cooling systems</li>
+                        <li><strong>Professional Peripherals:</strong> Tournament-grade mechanical keyboards, gaming mice, and headsets</li>
+                        <li><strong>Displays:</strong> 360Hz gaming monitors for optimal competitive play</li>
+                        <li><strong>Network Infrastructure:</strong> Enterprise-grade networking equipment for minimal latency</li>
+                    </ul>
+                    
+                    <h3>Partnerships & Sponsorships</h3>
+                    <ul>
+                        <li><strong>Technology Partners:</strong> Hardware manufacturers and suppliers for equipment and maintenance</li>
+                        <li><strong>Tournament Sponsors:</strong> Companies interested in supporting competitive CS2 events</li>
+                        <li><strong>Local Businesses:</strong> Cafés, restaurants, or delivery services for food and beverage options</li>
+                    </ul>
+                    
+                    <h3>Community Support</h3>
+                    <ul>
+                        <li><strong>Founding Members:</strong> Early adopters and regulars who can help shape our community</li>
+                        <li><strong>Content Creators:</strong> Streamers and content producers to share our events and facilities</li>
+                        <li><strong>Competitive Teams:</strong> Local teams looking for a practice space and tournament venue</li>
+                    </ul>
+                    
+                    <h3>Investment</h3>
+                    <p>We're actively seeking investors who share our passion for esports and community building. Our detailed business plan is available upon request, outlining our growth strategy, revenue projections, and expansion plans.</p>
+                    
+                    <div class="text-center" style="margin-top: 30px;">
+                        <a href="#contact" class="btn">Partner With Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Social Media Section -->
+        <section id="social" class="section section-dark">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Social <span class="highlight">Platforms</span></h2>
+                    <p>Connect with our growing community across multiple channels</p>
+                </div>
+                
+                <div class="content-section">
+                    <p>Stay updated with the latest news, events, and promotions by following Tricksters Gaming Hub on our social media platforms. Join our online communities to connect with fellow gamers, participate in discussions, and be the first to know about upcoming tournaments and special offers.</p>
+                    
+                    <div class="social-grid">
+                        <div class="social-card">
+                            <div class="icon"><i class="fab fa-discord"></i></div>
+                            <h4>Discord</h4>
+                            <p>Join our active community server for discussions, team finding, and exclusive announcements</p>
+                            <a href="#" class="btn">Join Server</a>
+                        </div>
+                        
+                        <div class="social-card">
+                            <div class="icon"><i class="fab fa-twitter"></i></div>
+                            <h4>Twitter</h4>
+                            <p>Follow us for the latest updates, gaming news, and real-time event coverage</p>
+                            <a href="#" class="btn">Follow Us</a>
+                        </div>
+                        
+                        <div class="social-card">
+                            <div class="icon"><i class="fab fa-instagram"></i></div>
+                            <h4>Instagram</h4>
+                            <p>Check out photos and stories from our events, facility, and community members</p>
+                            <a href="#" class="btn">Follow Us</a>
+                        </div>
+                        
+                        <div class="social-card">
+                            <div class="icon"><i class="fab fa-twitch"></i></div>
+                            <h4>Twitch</h4>
+                            <p>Watch live streams of our tournaments, events, and featured players</p>
+                            <a href="#" class="btn">Subscribe</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Documentation Section -->
+        <section id="documentation" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Documentation <span class="highlight">Requests</span></h2>
+                    <p>Access our detailed business plan and project documents</p>
+                </div>
+                
+                <div class="content-section">
+                    <p>Tricksters Gaming Hub has developed comprehensive documentation outlining our business model, growth strategy, market analysis, and financial projections. These materials are available to potential investors, partners, and stakeholders upon request.</p>
+                    
+                    <h3>Available Documents</h3>
+                    <ul>
+                        <li><strong>Business Plan:</strong> Our complete business strategy, market analysis, and financial projections</li>
+                        <li><strong>Facility Blueprint:</strong> Detailed plans for our current setup and future expansions</li>
+                        <li><strong>Equipment Specifications:</strong> Technical details of our gaming stations and network infrastructure</li>
+                        <li><strong>Marketing Strategy:</strong> Our approach to community building and brand growth</li>
+                        <li><strong>Investment Prospectus:</strong> Overview of investment opportunities and potential returns</li>
+                    </ul>
+                    
+                    <div class="docs-form">
+                        <h3>Request Documentation</h3>
+                        <form action="#" method="post">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Full Name</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="company">Company/Organization</label>
+                                    <input type="text" id="company" name="company">
+                                </div>
+                                <div class="form-group">
+                                    <label for="role">Your Role</label>
+                                    <input type="text" id="role" name="role">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="documents">Documents Requested</label>
+                                <select id="documents" name="documents" required>
+                                    <option value="">Select document type...</option>
+                                    <option value="business-plan">Business Plan</option>
+                                    <option value="facility-blueprint">Facility Blueprint</option>
+                                    <option value="equipment-specs">Equipment Specifications</option>
+                                    <option value="marketing-strategy">Marketing Strategy</option>
+                                    <option value="investment-prospectus">Investment Prospectus</option>
+                                    <option value="all-documents">All Available Documents</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="interest">Purpose of Interest</label>
+                                <textarea id="interest" name="interest" required placeholder="Please briefly describe your interest in Tricksters Gaming Hub..."></textarea>
+                            </div>
+                            <button type="submit" class="btn">Submit Request</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Who We Are Section -->
+        <section id="team" class="section section-dark">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Who We <span class="highlight">Are</span></h2>
+                    <p>Meet the passionate team behind Tricksters Gaming Hub</p>
+                </div>
+                
+                <div class="content-section">
+                    <p>Tricksters Gaming Hub was founded by a team of passionate gamers and business professionals who saw the need for a dedicated competitive gaming space in our area. Our diverse backgrounds in esports, business management, technology, and community building create the perfect combination of skills to make this vision a reality.</p>
+                    
+                    <div class="team-grid">
+                        <div class="team-card">
+                            <div class="team-img">
+                                <img src="/api/placeholder/400/400" alt="Alex Richards">
+                            </div>
+                            <div class="team-info">
+                                <h4>Alex Richards</h4>
+                                <span>Founder & CEO</span>
+                                <p>Former semi-professional CS player with 10+ years of experience in business development and community building.</p>
+                                <div class="team-social">
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="team-card">
+                            <div class="team-img">
+                                <img src="/api/placeholder/400/400" alt="Sarah Chen">
+                            </div>
+                            <div class="team-info">
+                                <h4>Sarah Chen</h4>
+                                <span>Operations Director</span>
+                                <p>Tech industry veteran with expertise in optimizing gaming systems and network infrastructure.</p>
+                                <div class="team-social">
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="team-card">
+                            <div class="team-img">
+                                <img src="/api/placeholder/400/400" alt="Marcus Johnson">
+                            </div>
+                            <div class="team-info">
+                                <h4>Marcus Johnson</h4>
+                                <span>Community Manager</span>
+                                <p>Experienced event organizer and community builder with deep roots in the local gaming scene.</p>
+                                <div class="team-social">
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-twitch"></i></a>
+                                    <a href="#"><i class="fab fa-discord"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="team-card">
+                            <div class="team-img">
+                                <img src="/api/placeholder/400/400" alt="Olivia Patel">
+                            </div>
+                            <div class="team-info">
+                                <h4>Olivia Patel</h4>
+                                <span>Marketing Strategist</span>
+                                <p>Digital marketing expert with background in esports brand development and social media growth.</p>
+                                <div class="team-social">
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Why We're Doing This Section -->
+        <section id="mission" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Why We're <span class="highlight">Doing This</span></h2>
+                    <p>Our mission and the driving force behind Tricksters Gaming Hub</p>
+                </div>
+                
+                <div class="content-section">
+                    <p>Tricksters Gaming Hub was born from our passion for competitive gaming and the desire to create something meaningful for our local gaming community. We believe that esports has the power to bring people together, foster healthy competition, and create lasting friendships.</p>
+                    
+                    <h3>Our Mission</h3>
+                    <p>We aim to build more than just a gaming café – we're creating a community hub where competitive gamers can thrive, improve their skills, and connect with like-minded individuals. Our mission is to:</p>
+                    
+                    <ul>
+                        <li><strong>Provide Professional Equipment:</strong> Give players access to the same high-end gear used by professionals</li>
+                        <li><strong>Foster Talent Development:</strong> Create a space where aspiring esports players can practice, learn, and grow</li>
+                        <li><strong>Build Local Community:</strong> Unite gamers from all backgrounds in a welcoming, inclusive environment</li>
+                        <li><strong>Promote Competitive Gaming:</strong> Organize tournaments and events that showcase the excitement of competitive play</li>
+                        <li><strong>Support CS2 Growth:</strong> Focus on Counter-Strike 2 as our primary game while embracing the wider gaming community</li>
+                    </ul>
+                    
+                    <h3>Our Values</h3>
+                    <ul>
+                        <li><strong>Excellence:</strong> Providing the best possible experience through top-tier equipment and service</li>
+                        <li><strong>Community:</strong> Creating an inclusive space where all gamers feel welcome</li>
+                        <li><strong>Passion:</strong> Bringing our love for gaming to everything we do</li>
+                        <li><strong>Innovation:</strong> Constantly improving our facilities and services</li>
+                        <li><strong>Integrity:</strong> Operating with transparency and honesty in all our business practices</li>
+                    </ul>
+                    
+                    <p>By bringing this vision to life, we hope to contribute positively to both the local community and the wider esports ecosystem, creating a space where competitive gaming can flourish and bringing people together through their shared passion.</p>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Location Section -->
+        <section id="location" class="section section-dark">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our <span class="highlight">Location</span></h2>
+                    <p>Find us in the heart of the city, easily accessible to all gamers</p>
+                </div>
+                
+                <div class="content-section">
+                    <p>Tricksters Gaming Hub is strategically located in the center of the city, making it easily accessible by public transport and with ample parking nearby. Our facilities are designed to provide maximum comfort and convenience for our gamers.</p>
+                    
+                    <div class="location-content">
+                        <div class="location-info">
+                            <div class="location-details">
+                                <h4>Address</h4>
+                                <p>123 Gaming Street</p>
+                                <p>Digital City, London</p>
+                                <p>EC1A 1BB</p>
+                            </div>
+                            
+                            <div class="location-details">
+                                <h4>Opening Hours</h4>
+                                <p>Monday - Friday: 10AM - 12AM</p>
+                                <p>Saturday - Sunday: 9AM - 2AM</p>
+                                <p>VIP Bookings: Available 24/7</p>
+                            </div>
+                            
+                            <div class="location-details">
+                                <h4>Getting Here</h4>
+                                <p><strong>Public Transport:</strong> 5-minute walk from Digital Square station</p>
+                                <p><strong>Parking:</strong> Public parking available at Tech Plaza (2-minute walk)</p>
+                                <p><strong>Bike Racks:</strong> Available directly outside our entrance</p>
+                            </div>
+                        </div>
+                        
+                        <div class="location-map">
+                            <!-- Replace with your actual Google Maps embed code -->
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9931.456383645393!2d-0.12701!3d51.51573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDMwJzU2LjYiTiAwwrAwNyczNy4yIlc!5e0!3m2!1sen!2suk!4v1615298702156!5m2!1sen!2suk" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 40px;">
+                        <a href="#" class="btn">Get Directions</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Future Plans Section -->
+<section id="future-plans" class="section section-dark">
+    <div class="container">
+        <div class="section-title">
+            <h2>Future <span class="highlight">Plans</span></h2>
+            <p>Exciting events and initiatives we're planning after our grand opening</p>
+        </div>
+        
+        <div class="content-section">
+            <p>At Tricksters Gaming Hub, we're not just creating a space for casual gaming – we're building a platform for competitive excellence and community entertainment. Here's a glimpse of what we're planning to bring to the local gaming scene once we open our doors:</p>
+            
+            <div class="plans-grid">
+                <div class="plans-card fade-in">
+                    <div class="plans-img">
+                        <img src="bck.png" alt="CS2 Tournament">
+                        <div class="plans-overlay">
+                            <span>Coming Soon</span>
+                        </div>
+                    </div>
+                    <div class="plans-content">
+                        <h3>CS2 Championship Tournament</h3>
+                        <p>Our flagship event will be a professionally organized Counter-Strike 2 tournament bringing together the best local talent and creating an electrifying competitive atmosphere.</p>
+                        
+                        <h4>Tournament Highlights:</h4>
+                        <ul>
+                            <li><strong>Professional Venue:</strong> Semi-finals and finals will be held in a dedicated venue with a live audience</li>
+                            <li><strong>Professional Casting:</strong> Full commentary team providing play-by-play and analysis</li>
+                            <li><strong>Live Production:</strong> Multiple camera setups, player cams, and professional graphics</li>
+                            <li><strong>Live Streaming:</strong> Full tournament broadcast on Twitch and other platforms</li>
+                            <li><strong>Prize Pool:</strong> Competitive prize pool to attract top talent</li>
+                            <li><strong>Community Engagement:</strong> Meet-and-greets with players, giveaways, and interactive activities for spectators</li>
+                        </ul>
+                        
+                        <p>This tournament will showcase not only the competitive spirit of CS2 but also demonstrate Tricksters Gaming Hub's commitment to fostering esports excellence in our community. The event will serve as a platform for local players to gain recognition and experience competing in a professional environment.</p>
+                        
+                        <div class="plans-cta">
+                            <a href="#contact" class="btn">Register Interest</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="additional-plans">
+                    <h3>More Upcoming Initiatives</h3>
+                    <div class="plans-list">
+                        <div class="plan-item fade-in">
+                            <div class="plan-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="plan-details">
+                                <h4>CS2 Coaching Program</h4>
+                                <p>Regular coaching sessions with experienced players to help improve skills and game understanding.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="plan-item fade-in">
+                            <div class="plan-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="plan-details">
+                                <h4>Team Formation Program</h4>
+                                <p>Initiative to help solo players find teammates and form competitive squads.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="plan-item fade-in">
+                            <div class="plan-icon">
+                                <i class="fas fa-tv"></i>
+                            </div>
+                            <div class="plan-details">
+                                <h4>Major Tournament Viewing Parties</h4>
+                                <p>Community gatherings to watch major CS2 tournaments with commentary and activities.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="plan-item fade-in">
+                            <div class="plan-icon">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div class="plan-details">
+                                <h4>Weekly Mini-Tournaments</h4>
+                                <p>Regular small-scale competitions to keep the competitive spirit alive between major events.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="community-note fade-in">
+                <h3>Community Involvement</h3>
+                <p>We believe that the success of these initiatives depends on community involvement. We invite all local gamers, content creators, casters, and CS2 enthusiasts to participate in shaping these events. Your feedback and support will be crucial in creating a thriving competitive ecosystem.</p>
+                <p>If you're interested in participating, volunteering, sponsoring, or contributing in any way to our future events, please don't hesitate to <a href="#contact">contact us</a>.</p>
+            </div>
+        </div>
+    </div>
+</section>
+    
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-column">
+                        <h3>Tricksters Gaming Hub</h3>
+                        <p>The premier destination for competitive CS2 gamers and gaming enthusiasts.</p>
+                        <p>Building a community, one game at a time.</p>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul class="footer-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.html#about">About</a></li>
+                            <li><a href="index.html#pricing">Pricing</a></li>
+                            <li><a href="index.html#setup">Gaming Stations</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Contact Us</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Gaming Street, London, EC1A 1BB</p>
+                        <p><i class="fas fa-phone"></i> +44 (0) 123 456 7890</p>
+                        <p><i class="fas fa-envelope"></i> info@trickstersgaminghub.com</p>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Follow Us</h3>
+                        <ul class="social-icons">
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fab fa-discord"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitch"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 Tricksters Gaming Hub. All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
+    
+        <script>
+            // Wait for DOM to fully load
+            document.addEventListener('DOMContentLoaded', function() {
+                // Cache DOM elements
+                const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+                const closeBtn = document.querySelector('.mobile-menu .close-btn');
+                const mobileMenu = document.querySelector('.mobile-menu');
+                const overlay = document.querySelector('.overlay');
+                const mobileMenuLinks = document.querySelectorAll('.mobile-menu ul li a');
+                const header = document.querySelector('header');
+                const fadeElements = document.querySelectorAll('.fade-in');
+                const docsForm = document.querySelector('.docs-form form');
+                
+                // Mobile Menu Functionality
+                function openMobileMenu() {
+                    if (mobileMenu) {
+                        mobileMenu.classList.add('active');
+                        if (overlay) overlay.classList.add('active');
+                        document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+                    }
+                }
+                
+                function closeMobileMenu() {
+                    if (mobileMenu) {
+                        mobileMenu.classList.remove('active');
+                        if (overlay) overlay.classList.remove('active');
+                        document.body.style.overflow = 'visible'; // Re-enable scrolling
+                    }
+                }
+                
+                if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openMobileMenu);
+                if (closeBtn) closeBtn.addEventListener('click', closeMobileMenu);
+                if (overlay) overlay.addEventListener('click', closeMobileMenu);
+                
+                // Close menu when clicking on mobile menu links
+                if (mobileMenuLinks) {
+                    mobileMenuLinks.forEach(link => {
+                        link.addEventListener('click', closeMobileMenu);
+                    });
+                }
+                
+                // Smooth Scrolling for anchor links
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function(e) {
+                        if (this.getAttribute('href') !== '#') {
+                            e.preventDefault();
+                            
+                            const targetId = this.getAttribute('href');
+                            const targetElement = document.querySelector(targetId);
+                            
+                            if (targetElement) {
+                                const headerHeight = header ? header.offsetHeight : 0;
+                                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                                
+                                window.scrollTo({
+                                    top: targetPosition,
+                                    behavior: 'smooth'
+                                });
+                            }
+                        }
+                    });
+                });
+                
+                // Scroll Animations for Fade In Elements
+                function checkFade() {
+                    if (fadeElements) {
+                        fadeElements.forEach(element => {
+                            const elementTop = element.getBoundingClientRect().top;
+                            const windowHeight = window.innerHeight;
+                            
+                            if (elementTop < windowHeight - 50) {
+                                element.classList.add('active');
+                            }
+                        });
+                    }
+                }
+                
+                // Run fade check on page load
+                checkFade();
+                
+                // Run fade check on scroll
+                window.addEventListener('scroll', checkFade);
+                
+                // Documentation Request Form Validation
+                if (docsForm) {
+                    docsForm.addEventListener('submit', function(e) {
+                        e.preventDefault();
+                        
+                        // Basic validation
+                        let valid = true;
+                        const name = document.getElementById('name');
+                        const email = document.getElementById('email');
+                        const documents = document.getElementById('documents');
+                        const interest = document.getElementById('interest');
+                        
+                        // Reset previous error messages
+                        document.querySelectorAll('.error-message').forEach(el => el.remove());
+                        
+                        // Validate name
+                        if (!name.value.trim()) {
+                            addError(name, 'Please enter your name');
+                            valid = false;
+                        }
+                        
+                        // Validate email
+                        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        if (!emailRegex.test(email.value.trim())) {
+                            addError(email, 'Please enter a valid email address');
+                            valid = false;
+                        }
+                        
+                        // Validate documents selection
+                        if (!documents.value) {
+                            addError(documents, 'Please select a document type');
+                            valid = false;
+                        }
+                        
+                        // Validate interest
+                        if (!interest.value.trim() || interest.value.trim().length < 20) {
+                            addError(interest, 'Please describe your interest (at least 20 characters)');
+                            valid = false;
+                        }
+                        
+                        // If valid, show success message
+                        if (valid) {
+                            const formElements = docsForm.elements;
+                            for (let i = 0; i < formElements.length; i++) {
+                                formElements[i].disabled = true;
+                            }
+                            
+                            const successMessage = document.createElement('div');
+                            successMessage.className = 'success-message';
+                            successMessage.textContent = 'Thank you for your interest! We will send the requested documentation shortly.';
+                            successMessage.style.color = 'var(--primary)';
+                            successMessage.style.padding = '15px 0';
+                            successMessage.style.fontWeight = 'bold';
+                            successMessage.style.textAlign = 'center';
+                            
+                            docsForm.appendChild(successMessage);
+                            
+                            // Reset form after 3 seconds
+                            setTimeout(() => {
+                                docsForm.reset();
+                                successMessage.remove();
+                                const formElements = docsForm.elements;
+                                for (let i = 0; i < formElements.length; i++) {
+                                    formElements[i].disabled = false;
+                                }
+                            }, 3000);
+                        }
+                    });
+                    
+                    function addError(element, message) {
+                        const errorDiv = document.createElement('div');
+                        errorDiv.className = 'error-message';
+                        errorDiv.textContent = message;
+                        errorDiv.style.color = '#ff4444';
+                        errorDiv.style.fontSize = '12px';
+                        errorDiv.style.marginTop = '5px';
+                        
+                        element.parentNode.appendChild(errorDiv);
+                        element.style.borderColor = '#ff4444';
+                        
+                        element.addEventListener('input', function() {
+                            const errorEl = element.parentNode.querySelector('.error-message');
+                            if (errorEl) errorEl.remove();
+                            element.style.borderColor = '';
+                        });
+                    }
+                }
+                
+                // Parallax effect for page header
+                const pageHeader = document.querySelector('.page-header');
+                if (pageHeader) {
+                    window.addEventListener('scroll', function() {
+                        const scrollPosition = window.pageYOffset;
+                        pageHeader.style.backgroundPosition = `center ${scrollPosition * 0.5}px`;
+                    });
+                }
+                
+                // Scroll-based navbar effects
+                let lastScrollTop = 0;
+                window.addEventListener('scroll', function() {
+                    const currentScroll = window.pageYOffset;
+                    
+                    if (header) {
+                        // Add/remove shadow and background opacity based on scroll position
+                        if (currentScroll > 50) {
+                            header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.3)';
+                            header.style.backgroundColor = 'rgba(5, 5, 5, 0.95)';
+                        } else {
+                            header.style.boxShadow = 'none';
+                            header.style.backgroundColor = 'rgba(5, 5, 5, 0.95)';
+                        }
+                    }
+                    
+                    lastScrollTop = currentScroll;
+                });
+                
+                // Highlight active section in navigation
+                function setActiveSection() {
+                    const sections = document.querySelectorAll('section[id]');
+                    
+                    if (sections.length) {
+                        const scrollPosition = window.pageYOffset + 200; // Add offset for better UX
+                        
+                        sections.forEach(section => {
+                            const sectionTop = section.offsetTop;
+                            const sectionHeight = section.offsetHeight;
+                            const sectionId = section.getAttribute('id');
+                            
+                            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                                document.querySelectorAll('.nav-links a').forEach(link => {
+                                    link.classList.remove('active');
+                                    if (link.getAttribute('href') === '#' + sectionId) {
+                                        link.classList.add('active');
+                                    }
+                                });
+                            }
+                        });
+                    }
+                }
+                
+                window.addEventListener('scroll', setActiveSection);
+                
+                // Image hover effects for team members
+                const teamCards = document.querySelectorAll('.team-card');
+                if (teamCards) {
+                    teamCards.forEach(card => {
+                        card.addEventListener('mouseenter', function() {
+                            this.querySelector('.team-img img').style.transform = 'scale(1.1)';
+                        });
+                        
+                        card.addEventListener('mouseleave', function() {
+                            this.querySelector('.team-img img').style.transform = '';
+                        });
+                    });
+                }
+                
+                // Social media card hover effects
+                const socialCards = document.querySelectorAll('.social-card');
+                if (socialCards) {
+                    socialCards.forEach(card => {
+                        card.addEventListener('mouseenter', function() {
+                            this.style.transform = 'translateY(-10px)';
+                            this.style.boxShadow = '0 10px 25px rgba(255, 154, 205, 0.2)';
+                        });
+                        
+                        card.addEventListener('mouseleave', function() {
+                            this.style.transform = '';
+                            this.style.boxShadow = '';
+                        });
+                    });
+                    
+                    // Re-cache elements
+                    const mobileMenu = document.querySelector('.mobile-menu');
+                    const closeBtn = document.querySelector('.mobile-menu .close-btn');
+                    const overlay = document.querySelector('.overlay');
+                    const mobileMenuLinks = document.querySelectorAll('.mobile-menu ul li a');
+                    
+                    // Attach event listeners
+                    if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openMobileMenu);
+                    if (closeBtn) closeBtn.addEventListener('click', closeMobileMenu);
+                    if (overlay) overlay.addEventListener('click', closeMobileMenu);
+                    
+                    if (mobileMenuLinks) {
+                        mobileMenuLinks.forEach(link => {
+                            link.addEventListener('click', closeMobileMenu);
+                        });
+                    }
+                }
+                
+                // Add animation classes to elements if not already present in HTML
+                const animateElements = [
+                    '.section-title',
+                    '.team-card',
+                    '.social-card',
+                    '.content-section',
+                    '.location-content',
+                    '.docs-form'
+                ];
+                
+                animateElements.forEach(selector => {
+                    document.querySelectorAll(selector).forEach((el, index) => {
+                        if (!el.classList.contains('fade-in')) {
+                            el.classList.add('fade-in');
+                            // Add staggered animation delay
+                            el.style.transitionDelay = `${index * 0.1}s`;
+                        }
+                    });
+                });
+                
+                // Initialize any sliders if added later
+                function initSliders() {
+                    const sliders = document.querySelectorAll('.slider');
+                    
+                    if (sliders.length) {
+                        sliders.forEach(slider => {
+                            // Slider initialization code would go here
+                            console.log('Slider initialized');
+                        });
+                    }
+                }
+                
+                // Call slider initialization
+                initSliders();
+            });
+            </script>
+    </body>
+    </html>
