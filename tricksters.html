@@ -1449,6 +1449,235 @@ header {
     color: var(--light);
 }
 
+/* Sponsors Section Styling */
+.sponsors-section {
+  padding: 100px 0;
+  background-color: var(--dark);
+  position: relative;
+}
+
+.sponsors-section:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.sponsors-container {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.sponsor-tier {
+  width: 100%;
+}
+
+.tier-title {
+  font-size: 24px;
+  margin-bottom: 30px;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.tier-title:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background-color: var(--primary);
+}
+
+.sponsors-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 20px;
+}
+
+.tier-premium .sponsor-item {
+  flex-basis: 250px;
+  height: 130px;
+}
+
+.tier-supporters .sponsor-item {
+  flex-basis: 200px;
+  height: 100px;
+}
+
+.sponsor-item {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sponsor-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(255, 154, 205, 0.15);
+  border-color: rgba(255, 154, 205, 0.3);
+}
+
+.sponsor-logo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(1.2) contrast(0.8);
+  transition: all 0.3s ease;
+}
+
+.sponsor-item:hover .sponsor-logo {
+  filter: grayscale(0%) brightness(1) contrast(1);
+}
+
+.sponsor-overlay {
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 154, 205, 0.9);
+  color: #0c0c0c;
+  padding: 8px 0;
+  text-align: center;
+  transition: bottom 0.3s ease;
+}
+
+.sponsor-item:hover .sponsor-overlay {
+  bottom: 0;
+}
+
+.sponsor-name {
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+.sponsor-info {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: rgba(15, 15, 15, 0.6);
+  padding: 40px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 154, 205, 0.1);
+}
+
+.sponsor-info h3 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: var(--primary);
+}
+
+.sponsor-info p {
+  color: #ddd;
+  margin-bottom: 25px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.sponsor-btn {
+  background: linear-gradient(135deg, var(--primary) 0%, #e681b4 100%);
+  padding: 12px 30px;
+  font-size: 16px;
+}
+
+.sponsor-btn:hover {
+  background: linear-gradient(135deg, #e681b4 0%, var(--primary) 100%);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .sponsors-grid {
+    gap: 30px;
+  }
+  
+  .tier-premium .sponsor-item {
+    flex-basis: 220px;
+    height: 120px;
+  }
+  
+  .tier-supporters .sponsor-item {
+    flex-basis: 180px;
+    height: 90px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sponsors-section {
+    padding: 70px 0;
+  }
+  
+  .sponsors-grid {
+    gap: 20px;
+  }
+  
+  .tier-premium .sponsor-item,
+  .tier-supporters .sponsor-item {
+    flex-basis: 160px;
+    height: 80px;
+    padding: 15px;
+  }
+  
+  .tier-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .sponsor-info {
+    padding: 30px 20px;
+  }
+  
+  .sponsor-info h3 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sponsors-section {
+    padding: 50px 0;
+  }
+  
+  .sponsors-grid {
+    gap: 15px;
+  }
+  
+  .tier-premium .sponsor-item,
+  .tier-supporters .sponsor-item {
+    flex-basis: calc(50% - 15px);
+    height: 70px;
+    padding: 10px;
+  }
+  
+  .sponsor-info {
+    padding: 25px 15px;
+  }
+  
+  .sponsor-overlay {
+    padding: 5px 0;
+  }
+  
+  .sponsor-name {
+    font-size: 12px;
+  }
+}
+
 .social-icons {
     display: flex;
     gap: 15px;
@@ -2145,7 +2374,7 @@ footer {
                             <li>360Hz gaming monitors</li>
                             <li>Optimized CS2 configuration</li>
                             <li>Priority booking</li>
-                            <li>Free energy drink</li>
+                            <li>X1 Free Drink</li>
                             <li>Exclusive VIP lounge access</li>
                         </ul>
                     </div>
@@ -2334,12 +2563,12 @@ footer {
                 <div class="event-content">
                     <h3>Grand Opening Tournament</h3>
                     <p class="event-date">Our first official event</p>
-                    <p>Compete in our inaugural tournament featuring multiple game categories and amazing prizes. Sign up early for a chance to be part of gaming history!</p>
+                    <p>Compete in our inaugural Counter-Strike 2 Tournament!</p>
                     <ul class="event-features">
-                        <li>£1,000 prize pool</li>
-                        <li>Multiple game categories</li>
-                        <li>Live streaming</li>
-                        <li>Professional commentary</li>
+                        <li>Prize Pool: TBD</li>
+                        <li>Game: Counter-Strike 2</li>
+                        <li>Casted: Semi Final and Final</li>
+                        <li>LAN: Yes</li>
                     </ul>
                     <a href="#" class="event-button">Get Notified</a>
                 </div>
@@ -2354,14 +2583,14 @@ footer {
                     <img src="cs2_banner_tournament.jpg" alt="Community Night">
                 </div>
                 <div class="event-content">
-                    <h3>Community Game Night</h3>
-                    <p class="event-date">Weekly social gaming</p>
-                    <p>Join our weekly social gaming nights where you can meet other gamers, try new titles, and enjoy special discounts on food and drinks.</p>
+                    <h3>TBD</h3>
+                    <p class="event-date">To Be Decided</p>
+                    <p>To Be Decided</p>
                     <ul class="event-features">
-                        <li>Casual gaming atmosphere</li>
-                        <li>Game showcases</li>
-                        <li>Networking opportunities</li>
-                        <li>Food and drink specials</li>
+                        <li>To Be Decided</li>
+                        <li>To Be Decided</li>
+                        <li>To Be Decided</li>
+                        <li>To Be Decided</li>
                     </ul>
                     <a href="#" class="event-button">Get Notified</a>
                 </div>
@@ -2389,6 +2618,145 @@ footer {
                 </div>
             </div>
         </div>
+
+        <!-- Sponsors Section -->
+<section id="sponsors" class="sponsors-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our <span class="highlight">Sponsors</span></h2>
+        <span class="pink-underline"></span>
+        <p>Get your business on here!</p>
+      </div>
+      
+      <div class="sponsors-container">
+        <div class="sponsor-tier">
+          <h3 class="tier-title">Premium Partners</h3>
+          <div class="sponsors-grid tier-premium">
+            <div class="sponsor-item">
+              <img src="/api/placeholder/200/100" alt="Sponsor Logo" class="sponsor-logo">
+              <div class="sponsor-overlay">
+                <p class="sponsor-name">Potentially your name</p>
+              </div>
+            </div>
+            <div class="sponsor-item">
+              <img src="/api/placeholder/200/100" alt="Sponsor Logo" class="sponsor-logo">
+              <div class="sponsor-overlay">
+                <p class="sponsor-name">Potentially your name</p>
+              </div>
+            </div>
+            <div class="sponsor-item">
+              <img src="/api/placeholder/200/100" alt="Sponsor Logo" class="sponsor-logo">
+              <div class="sponsor-overlay">
+                <p class="sponsor-name">Potentially your name</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="sponsor-tier">
+          <h3 class="tier-title">Official Supporters</h3>
+          <div class="sponsors-grid tier-supporters">
+            <div class="sponsor-item">
+              <img src="/api/placeholder/200/100" alt="Sponsor Logo" class="sponsor-logo">
+              <div class="sponsor-overlay">
+                <p class="sponsor-name">Potentially your name</p>
+              </div>
+            </div>
+            <div class="sponsor-item">
+              <img src="/api/placeholder/200/100" alt="Sponsor Logo" class="sponsor-logo">
+              <div class="sponsor-overlay">
+                <p class="sponsor-name">Potentially your name</p>
+              </div>
+            </div>
+            <div class="sponsor-item">
+              <img src="/api/placeholder/200/100" alt="Sponsor Logo" class="sponsor-logo">
+              <div class="sponsor-overlay">
+                <p class="sponsor-name">Potentially your name</p>
+              </div>
+            </div>
+            <div class="sponsor-item">
+              <img src="/api/placeholder/200/100" alt="Sponsor Logo" class="sponsor-logo">
+              <div class="sponsor-overlay">
+                <p class="sponsor-name">Potentially your name</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="sponsor-info">
+          <h3>Become a Sponsor</h3>
+          <p>Interested in partnering with Tricksters Gaming Hub? We offer various sponsorship packages with excellent visibility to our gaming community.</p>
+          <a href="#contact" class="btn sponsor-btn">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    // Animate sponsor logos on scroll
+    const sponsorItems = document.querySelectorAll('.sponsor-item');
+    
+    // Function to check if element is in viewport
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+    
+    // Function to animate sponsors when visible
+    function animateSponsors() {
+        sponsorItems.forEach((item, index) => {
+            if (isInViewport(item)) {
+                // Add staggered animation
+                setTimeout(() => {
+                    item.style.opacity = "1";
+                    item.style.transform = "translateY(0)";
+                }, 100 * index);
+            }
+        });
+    }
+    
+    // Set initial state
+    sponsorItems.forEach(item => {
+        item.style.opacity = "0";
+        item.style.transform = "translateY(30px)";
+        item.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+    });
+    
+    // Animate on page load
+    setTimeout(animateSponsors, 300);
+    
+    // Animate on scroll
+    window.addEventListener('scroll', animateSponsors);
+    
+    // Add random hover effect to simulate interest
+    function randomHover() {
+        if (sponsorItems.length > 0) {
+            const randomIndex = Math.floor(Math.random() * sponsorItems.length);
+            const item = sponsorItems[randomIndex];
+            
+            // Add hover class
+            item.classList.add('hover-effect');
+            
+            // Remove after animation completes
+            setTimeout(() => {
+                item.classList.remove('hover-effect');
+            }, 2000);
+            
+            // Set next random hover
+            setTimeout(randomHover, 4000 + Math.random() * 3000);
+        }
+    }
+    
+    // Start random hover effect after 5 seconds
+    setTimeout(randomHover, 5000);
+});
+  </script>
         
 <!-- Merchandise Preview -->
 <div class="merch-preview">
@@ -2555,7 +2923,7 @@ footer {
                             </div>
                             <div class="contact-info-text">
                                 <h4>Location</h4>
-                                <p>123 Gaming Street, Digital City<br>London, UK</p>
+                                <p>To Be Decided<br>South Yorkshire</p>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -2564,8 +2932,7 @@ footer {
                             </div>
                             <div class="contact-info-text">
                                 <h4>Phone</h4>
-                                <p>+44 (0) 123 456 7890</p>
-                                <p>+44 (0) 987 654 3210</p>
+                                <p>+44 7842 550 206</p>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -2574,8 +2941,7 @@ footer {
                             </div>
                             <div class="contact-info-text">
                                 <h4>Email</h4>
-                                <p>info@trickstersgaminghub.com</p>
-                                <p>bookings@trickstersgaminghub.com</p>
+                                <p>contact@tricksters.co.uk</p>
                             </div>
                         </div>
                         <div class="contact-item">
