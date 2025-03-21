@@ -1,0 +1,1790 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Tickets - Friends Kids' Festival</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+:root {
+    --primary: #3498db;
+    --secondary: #2EC4B6;
+    --accent: #E71D36;
+    --dark: #011627;
+    --light: #ecf0f1;
+    --white: #ffffff;
+    --gray: #95a5a6;
+    --yellow: #FF9F1C;
+    
+    --shadow-sm: 0 3px 10px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 10px 20px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 15px 30px rgba(0, 0, 0, 0.15);
+    
+    --border-radius-sm: 10px;
+    --border-radius-md: 20px;
+    --border-radius-lg: 30px;
+    --border-radius-xl: 50px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #f9f9fc;
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header & Navbar */
+header {
+    background-color: var(--dark);
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+}
+
+.logo-text {
+    color: var(--light);
+    margin-left: 10px;
+    font-size: 1.2rem;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    position: relative;
+    margin-left: 5px;
+}
+
+.nav-links li a {
+    color: var(--light);
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border-radius: 25px;
+}
+
+.nav-links li a:hover {
+    background-color: var(--primary);
+    color: var(--dark);
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--dark);
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    padding: 10px 0;
+}
+
+.dropdown-content a {
+    color: var(--light);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--primary);
+    color: var(--dark);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: var(--light);
+    font-size: 1.5rem;
+}
+
+/* Improved Responsive Styles */
+@media (max-width: 992px) {
+    .logo img {
+        height: 50px;
+    }
+    
+    .nav-links li a {
+        padding: 8px 12px;
+        font-size: 0.95rem;
+    }
+    
+    .page-title {
+        font-size: 2.5rem;
+    }
+
+    .event-date {
+        font-size: 1.2rem;
+    }
+
+    .ticket-types-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .location-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--dark);
+        flex-direction: column;
+        padding: 15px 0;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 10px 10px;
+        z-index: 1000;
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .nav-links li {
+        width: 100%;
+        margin: 0;
+    }
+    
+    .nav-links li a {
+        padding: 12px 20px;
+        border-radius: 0;
+        width: 100%;
+        display: block;
+    }
+    
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        width: 100%;
+        margin-top: 0;
+        padding: 0;
+        border-radius: 0;
+        display: none;
+    }
+    
+    .dropdown-content a {
+        padding-left: 40px;
+    }
+    
+    .dropdown.active .dropdown-content {
+        display: block;
+    }
+    
+    .hamburger {
+        display: block;
+    }
+    
+    .header-inner {
+        position: relative;
+    }
+    
+    .navbar {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        background-color: var(--white);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        border-radius: 4px;
+        display: none;
+    }
+    
+    .navbar.active {
+        display: block;
+    }
+    
+    .nav-menu {
+        flex-direction: column;
+    }
+    
+    .nav-item {
+        margin: 0;
+        margin-bottom: 10px;
+    }
+    
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .ticket-selection-container,
+    .location-section {
+        padding: 30px 20px;
+    }
+
+    .ticket-form-title,
+    .location-title {
+        font-size: 1.5rem;
+    }
+    
+    .map-container {
+        height: 350px;
+    }
+}
+
+@media (max-width: 576px) {
+    header {
+        padding: 8px 0;
+    }
+    
+    .logo img {
+        height: 40px;
+    }
+    
+    .logo-text {
+        font-size: 1rem;
+    }
+    
+    .nav-links li a,
+    .dropdown-content a {
+        font-size: 0.9rem;
+        padding: 10px 15px;
+    }
+    
+    .dropdown-content a {
+        padding-left: 30px;
+    }
+    
+    .hamburger {
+        font-size: 1.3rem;
+    }
+    
+    .page-title {
+        font-size: 1.8rem;
+    }
+
+    .event-date {
+        font-size: 1.1rem;
+    }
+
+    .event-description {
+        font-size: 1rem;
+    }
+
+    .ticket-type-card {
+        padding: 15px;
+    }
+
+    .ticket-type-name {
+        font-size: 1.1rem;
+    }
+
+    .ticket-type-price {
+        font-size: 1.2rem;
+    }
+
+    .form-label {
+        font-size: 1rem;
+    }
+
+    .form-select, .form-input {
+        padding: 12px 15px;
+    }
+
+    .booking-info {
+        padding: 15px;
+    }
+
+    .booking-period-item {
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+
+    .booking-period-name {
+        margin-bottom: 5px;
+    }
+
+    .map-container {
+        height: 300px;
+    }
+    
+    .price-comparison {
+        margin-top: 20px;
+    }
+    
+    .price-table th,
+    .price-table td {
+        padding: 8px 6px;
+        font-size: 0.85rem;
+    }
+    
+    .price-table th {
+        white-space: nowrap;
+    }
+    
+    .best-value::after {
+        font-size: 0.6rem;
+        padding: 2px 6px;
+    }
+    
+    .ticket-decoration {
+        display: none;
+    }
+    
+    .contact-info {
+        padding: 15px;
+    }
+    
+    .contact-title {
+        font-size: 1.1rem;
+    }
+    
+    .contact-item {
+        margin-bottom: 10px;
+    }
+    
+    .contact-icon {
+        font-size: 1rem;
+    }
+    
+    .contact-text {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .logo-text {
+        font-size: 0.85rem;
+        max-width: 120px;
+        line-height: 1.2;
+    }
+    
+    .logo img {
+        height: 35px;
+    }
+    
+    .page-content {
+        padding-top: 80px;
+    }
+    
+    .page-title {
+        font-size: 1.6rem;
+    }
+    
+    .event-date {
+        font-size: 1rem;
+    }
+    
+    .ticket-form-title,
+    .location-title {
+        font-size: 1.3rem;
+    }
+    
+    .ticket-quantity {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .booking-info-title {
+        font-size: 1.1rem;
+    }
+    
+    .booking-period-name,
+    .booking-period-value {
+        font-size: 0.85rem;
+    }
+    
+    .ticket-submit-btn {
+        font-size: 1.1rem;
+        padding: 14px 0;
+    }
+    
+    .map-container {
+        height: 250px;
+    }
+}
+/* Main Container */
+.page-container {
+    max-width: 1000px;
+    margin: 100px auto 60px;
+    padding: 0 20px;
+    position: relative;
+}
+
+/* Floating Elements */
+.floating-element {
+    position: absolute;
+    z-index: -1;
+    opacity: 0.07;
+    font-size: 4rem;
+    color: var(--primary);
+    animation: float 10s ease-in-out infinite;
+}
+
+.balloon-1 {
+    top: -50px;
+    left: 10%;
+    font-size: 5rem;
+    color: var(--yellow);
+    animation-delay: 0s;
+}
+
+.balloon-2 {
+    top: 30%;
+    right: 5%;
+    font-size: 4rem;
+    color: var(--secondary);
+    animation-delay: 2s;
+}
+
+.balloon-3 {
+    bottom: 20%;
+    left: 8%;
+    font-size: 4.5rem;
+    color: var(--accent);
+    animation-delay: 1s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-30px) rotate(5deg); }
+}
+
+/* Page Header */
+.page-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.page-title {
+    font-size: 3.5rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.05);
+    position: relative;
+    display: inline-block;
+}
+
+.title-decoration {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.title-decoration span {
+    display: block;
+    height: 6px;
+    border-radius: 3px;
+}
+
+.title-decoration span:nth-child(1) {
+    width: 50px;
+    background-color: var(--primary);
+}
+
+.title-decoration span:nth-child(2) {
+    width: 100px;
+    background-color: var(--secondary);
+}
+
+.title-decoration span:nth-child(3) {
+    width: 50px;
+    background-color: var(--accent);
+}
+
+/* Auth Container */
+.auth-container {
+    background-color: var(--white);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+/* Tabs */
+.auth-tabs {
+    display: flex;
+    background-color: var(--light);
+    padding: 10px;
+    border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+}
+
+.auth-tab-btn {
+    flex: 1;
+    padding: 15px 20px;
+    font-family: 'Baloo 2', cursive;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--gray);
+    border-radius: var(--border-radius-md);
+    transition: all 0.3s ease;
+}
+
+.auth-tab-btn.active {
+    background-color: var(--white);
+    color: var(--primary);
+    box-shadow: var(--shadow-sm);
+}
+
+.auth-tab-btn:hover:not(.active) {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: var(--primary);
+}
+
+/* Tab Content */
+.auth-tab-content {
+    display: none;
+    padding: 40px;
+}
+
+.auth-tab-content.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Social Buttons */
+.social-buttons {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.social-text {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: var(--dark);
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    padding: 12px 20px;
+    margin: 0 10px;
+    border-radius: var(--border-radius-xl);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    box-shadow: var(--shadow-sm);
+}
+
+.facebook-btn {
+    background-color: #4267B2;
+    color: white;
+}
+
+.facebook-btn:hover {
+    background-color: #3b5998;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(66, 103, 178, 0.3);
+}
+
+.google-btn {
+    background-color: white;
+    color: #444;
+    border: 1px solid #ddd;
+}
+
+.google-btn:hover {
+    background-color: #f8f8f8;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.social-btn i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+/* Separator */
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 30px 0;
+    color: var(--gray);
+}
+
+.separator::before,
+.separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.separator span {
+    padding: 0 15px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Form */
+.auth-form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--dark);
+}
+
+.required {
+    color: var(--accent);
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-wrapper .icon {
+    position: absolute;
+    left: 15px;
+    color: var(--primary);
+    font-size: 1.1rem;
+}
+
+.input-wrapper input,
+.input-wrapper select {
+    width: 100%;
+    padding: 15px 15px 15px 45px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: var(--border-radius-xl);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: var(--white);
+    color: var(--dark);
+    font-family: 'Nunito', sans-serif;
+}
+
+.input-wrapper input:focus,
+.input-wrapper select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--gray);
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.toggle-password:hover {
+    color: var(--primary);
+}
+
+.select-arrow {
+    position: absolute;
+    right: 15px;
+    color: var(--gray);
+    pointer-events: none;
+}
+
+/* Form Options */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+}
+
+.remember-me input[type="checkbox"] {
+    margin-right: 8px;
+    width: 18px;
+    height: 18px;
+}
+
+.forgot-password {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.forgot-password:hover {
+    color: var(--secondary);
+    text-decoration: underline;
+}
+
+/* Checkbox Group */
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.fancy-checkbox {
+    margin-right: 10px;
+    margin-top: 2px;
+    width: 20px;
+    height: 20px;
+}
+
+/* Submit Button */
+.submit-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 15px 30px;
+    background-color: var(--primary);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family: 'Baloo 2', cursive;
+    border: none;
+    border-radius: var(--border-radius-xl);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 0 darken(#3498db, 10%), 0 10px 20px rgba(52, 152, 219, 0.3);
+    position: relative;
+    top: 0;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 0 darken(#3498db, 10%), 0 15px 25px rgba(52, 152, 219, 0.4);
+}
+
+.submit-btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 0 darken(#3498db, 10%), 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+
+.submit-btn i {
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+
+.submit-btn:hover i {
+    transform: translateX(5px);
+}
+
+.login-btn {
+    background-color: var(--primary);
+}
+
+.register-btn {
+    background-color: var(--secondary);
+}
+
+/* Privacy Notice */
+.privacy-notice {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--gray);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.privacy-notice a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.privacy-notice a:hover {
+    color: var(--secondary);
+    text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .page-container {
+        margin-top: 80px;
+    }
+    
+    .page-title {
+        font-size: 2.8rem;
+    }
+    
+    .auth-tab-content {
+        padding: 30px 20px;
+    }
+    
+    .social-btn {
+        width: 150px;
+        margin: 0 5px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .page-title {
+        font-size: 2.3rem;
+    }
+    
+    .auth-tabs {
+        padding: 5px;
+    }
+    
+    .auth-tab-btn {
+        padding: 12px 15px;
+        font-size: 1.1rem;
+    }
+    
+    .social-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .social-btn {
+        width: 100%;
+        max-width: 250px;
+        margin: 0;
+    }
+    
+    .form-options {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .submit-btn {
+        font-size: 1.1rem;
+        padding: 12px 25px;
+    }
+    
+    .floating-element {
+        display: none;
+    }
+}
+
+@media (max-width: 400px) {
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .auth-tab-btn {
+        font-size: 1rem;
+        padding: 10px;
+    }
+}
+
+/* Footer - Fun & Bubbly Style */
+.footer {
+    position: relative;
+    background-color: var(--dark);
+    color: var(--light);
+    overflow: hidden;
+    padding-top: 100px;
+}
+
+/* Wavy divider at top */
+.footer-wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0V6c0,21.6,291,111.46,741,110.26,445.39,3.6,459-88.3,459-110.26V0Z' fill='%23f0f9ff'/%3E%3C/svg%3E");
+    background-size: cover;
+    z-index: 1;
+}
+
+/* Background pattern */
+.footer-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 90%, rgba(255, 159, 28, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 10%, rgba(46, 196, 182, 0.1) 0%, transparent 50%);
+    opacity: 0.8;
+    z-index: 0;
+}
+
+/* Fun dot pattern */
+.footer-dots {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.3;
+    z-index: 0;
+}
+
+.footer-container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Main footer grid */
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 50px;
+}
+
+/* About section */
+.footer-about {
+    position: relative;
+}
+
+.footer-logo-container {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.footer-logo {
+    height: 70px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.footer-logo:hover {
+    transform: scale(1.05);
+}
+
+/* Fun squiggle under logo */
+.logo-squiggle {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='8' viewBox='0 0 100 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 4C10 4 10 8 20 8S30 4 40 4 50 8 60 8 70 4 80 4s10 4 20 4' fill='none' stroke='%23FF9F1C' stroke-width='2'/%3E%3C/svg%3E");
+    background-size: 100px 8px;
+    background-repeat: repeat-x;
+}
+
+.footer-text {
+    color: var(--light);
+    opacity: 0.9;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+/* Updated social icons */
+.footer-social {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.social-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: rgba(50, 58, 69, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-decoration: none; /* Ensures no underlines */
+}
+
+.social-icon:hover {
+    background-color: rgba(62, 72, 83, 0.9);
+}
+
+
+.facebook-icon {
+    color: #ffffff;
+}
+
+.instagram-icon {
+    color: #ffffff;
+}
+
+.youtube-icon {
+    color: #ffffff;
+}
+
+.twitter-icon {
+    color: #ffffff;
+}
+
+/* Column titles */
+.footer-column-title {
+    position: relative;
+    font-size: 1.4rem;
+    color: var(--primary);
+    margin-bottom: 25px;
+    font-weight: 700;
+    padding-left: 15px;
+}
+
+/* Fun title decoration */
+.footer-column-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 5px;
+    height: 70%;
+    width: 5px;
+    background: linear-gradient(to bottom, var(--primary), var(--secondary));
+    border-radius: 5px;
+}
+
+/* Links list */
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-link {
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-left: 20px;
+}
+
+.footer-link::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--secondary);
+    font-size: 1.2rem;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.footer-link:hover {
+    transform: translateX(5px);
+}
+
+.footer-link:hover::before {
+    color: var(--primary);
+}
+
+.footer-link a {
+    color: var(--light);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.footer-link a:hover {
+    color: var(--primary);
+}
+
+/* Contact items */
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateX(5px);
+}
+
+.contact-icon {
+    color: var(--primary);
+    font-size: 1.1rem;
+    margin-right: 15px;
+    margin-top: 5px;
+}
+
+.contact-text {
+    color: var(--light);
+    font-size: 1rem;
+    opacity: 0.9;
+    line-height: 1.5;
+}
+
+/* Newsletter form */
+.newsletter-form {
+    margin-top: 15px;
+    position: relative;
+}
+
+.newsletter-input {
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 50px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--light);
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.newsletter-input:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 0 3px rgba(46, 196, 182, 0.3);
+}
+
+.newsletter-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.newsletter-btn {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    border: none;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 7px 15px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.newsletter-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(46, 196, 182, 0.5);
+}
+
+/* Bottom bar */
+.footer-bottom {
+    position: relative;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.copyright {
+    color: var(--light);
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+
+.heart-icon {
+    color: var(--accent);
+    animation: beat 1.5s ease infinite;
+    display: inline-block;
+    transform-origin: center;
+}
+
+@keyframes beat {
+    0%, 100% { transform: scale(1); }
+    15% { transform: scale(1.2); }
+}
+
+/* Floating elements */
+.footer-floating-element {
+    position: absolute;
+    z-index: 1;
+    opacity: 0.15;
+    animation: float-footer 8s ease-in-out infinite;
+}
+
+.footer-element-1 {
+    top: 20%;
+    left: 5%;
+    font-size: 3rem;
+    animation-delay: 0s;
+}
+
+.footer-element-2 {
+    top: 30%;
+    right: 7%;
+    font-size: 2.5rem;
+    animation-delay: 2s;
+}
+
+.footer-element-3 {
+    bottom: 15%;
+    left: 10%;
+    font-size: 2.8rem;
+    animation-delay: 4s;
+}
+
+@keyframes float-footer {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(5deg); }
+}
+
+/* Go to top button */
+.go-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+}
+
+.go-top-btn.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.go-top-btn:hover {
+    background-color: var(--secondary);
+    transform: translateY(-5px);
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .footer-grid {
+        grid-template-columns: 2fr 1fr 1fr;
+    }
+    
+    .footer-column:nth-child(4) {
+        grid-column: span 3;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 992px) {
+    .footer {
+        padding-top: 80px;
+    }
+    
+    .footer-wave {
+        height: 50px;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+    
+    .footer-about {
+        grid-column: span 2;
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    .footer-social {
+        justify-content: center;
+    }
+    
+    .footer-column:nth-child(4) {
+        grid-column: span 2;
+    }
+    
+    .footer-floating-element {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding-top: 70px;
+    }
+    
+    .footer-wave {
+        height: 40px;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .footer-about,
+    .footer-column:nth-child(4) {
+        grid-column: span 1;
+    }
+    
+    .footer-column-title {
+        padding-left: 0;
+    }
+    
+    .footer-column-title::before {
+        left: 50%;
+        top: auto;
+        bottom: -10px;
+        height: 4px;
+        width: 50px;
+        transform: translateX(-50%);
+    }
+    
+    .footer-link {
+        padding-left: 0;
+    }
+    
+    .footer-link::before {
+        display: none;
+    }
+    
+    .contact-item {
+        justify-content: center;
+    }
+    
+    .go-top-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer {
+        padding-top: 60px;
+    }
+    
+    .footer-logo {
+        height: 60px;
+    }
+    
+    .footer-text {
+        font-size: 0.95rem;
+    }
+    
+    .footer-column-title {
+        font-size: 1.3rem;
+    }
+    
+    .contact-item {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contact-icon {
+        margin-right: 0;
+        margin-bottom: 8px;
+        font-size: 1.3rem;
+    }
+}
+
+</style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="data:image/png;base64,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" alt="Friends Kids' Festival Logo">
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Despre</a></li>
+                    <li><a href="#">Anglia prin Ochii Mei</a></li>
+                    <li><a href="#" class="active">Cont</a></li>
+                    <li class="dropdown">
+                        <a href="#">Evenimente <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="#">Friends Kids Festival</a>
+                            <a href="#">Gallery</a>
+                            <a href="#">Petreceri</a>
+                            <a href="#">Friends East Folkloric Festival</a>
+                        </div>
+                    </li>
+                </ul>
+                <button class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="page-container">
+        <!-- Floating elements -->
+        <div class="floating-element balloon-1"><i class="fas fa-cloud"></i></div>
+        <div class="floating-element balloon-2"><i class="fas fa-star"></i></div>
+        <div class="floating-element balloon-3"><i class="fas fa-heart"></i></div>
+        
+        <!-- Page title -->
+        <div class="page-header">
+            <h1 class="page-title">Contul Meu</h1>
+            <div class="title-decoration">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        
+        <div class="auth-container">
+            <!-- Tabs -->
+            <div class="auth-tabs">
+                <button class="auth-tab-btn active" data-tab="login-tab">Autentificare</button>
+                <button class="auth-tab-btn" data-tab="register-tab">Înregistrare</button>
+            </div>
+            
+            <!-- Login Tab -->
+            <div class="auth-tab-content active" id="login-tab">
+                <div class="social-buttons">
+                    <p class="social-text">Conectează-te rapid cu:</p>
+                    <button class="social-btn facebook-btn">
+                        <i class="fab fa-facebook-f"></i>
+                        <span>Facebook</span>
+                    </button>
+                    <button class="social-btn google-btn">
+                        <i class="fab fa-google"></i>
+                        <span>Google</span>
+                    </button>
+                </div>
+                
+                <div class="separator">
+                    <span>sau</span>
+                </div>
+                
+                <form class="auth-form" id="login-form">
+                    <div class="form-group">
+                        <label for="login-email">Nume utilizator sau adresă email <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="icon fas fa-user"></i>
+                            <input type="text" id="login-email" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="login-password">Parolă <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="icon fas fa-lock"></i>
+                            <input type="password" id="login-password" required>
+                            <button type="button" class="toggle-password">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-options">
+                        <div class="remember-me">
+                            <input type="checkbox" id="remember-me">
+                            <label for="remember-me">Ține-mă minte</label>
+                        </div>
+                        <a href="#" class="forgot-password">Ai uitat parola?</a>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn login-btn">
+                        <span>Autentificare</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </form>
+            </div>
+            
+            <!-- Register Tab -->
+            <div class="auth-tab-content" id="register-tab">
+                <div class="social-buttons">
+                    <p class="social-text">Creează cont rapid cu:</p>
+                    <button class="social-btn facebook-btn">
+                        <i class="fab fa-facebook-f"></i>
+                        <span>Facebook</span>
+                    </button>
+                    <button class="social-btn google-btn">
+                        <i class="fab fa-google"></i>
+                        <span>Google</span>
+                    </button>
+                </div>
+                
+                <div class="separator">
+                    <span>sau</span>
+                </div>
+                
+                <form class="auth-form" id="register-form">
+                    <div class="form-group">
+                        <label for="register-username">Nume utilizator <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="icon fas fa-user"></i>
+                            <input type="text" id="register-username" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="register-email">Adresă email <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="icon fas fa-envelope"></i>
+                            <input type="email" id="register-email" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="register-password">Parolă <span class="required">*</span></label>
+                        <div class="input-wrapper">
+                            <i class="icon fas fa-lock"></i>
+                            <input type="password" id="register-password" required>
+                            <button type="button" class="toggle-password">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="newsletter-opt" class="fancy-checkbox">
+                        <label for="newsletter-opt">Da, adaugă-mă la lista ta de corespondență</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="heard-from">De unde ați auzit de noi:</label>
+                        <div class="input-wrapper">
+                            <i class="icon fas fa-question-circle"></i>
+                            <select id="heard-from">
+                                <option value="">prefer să nu răspund</option>
+                                <option value="friend">De la un prieten</option>
+                                <option value="social">Social media</option>
+                                <option value="search">Motor de căutare</option>
+                                <option value="event">Eveniment</option>
+                            </select>
+                            <i class="fas fa-chevron-down select-arrow"></i>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn register-btn">
+                        <span>Înregistrare</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="privacy-notice">
+            <p>Datele dvs. personale vor fi folosite pentru a vă sprijini experiența pe acest site web, pentru a gestiona accesul la contul dvs. și pentru alte scopuri descrise în <a href="#">politica de confidențialitate</a> noastră.</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <!-- Decorative elements -->
+        <div class="footer-wave"></div>
+        <div class="footer-pattern"></div>
+        <div class="footer-dots"></div>
+        
+        <!-- Floating decorative emoji -->
+        <div class="footer-floating-element footer-element-1">🎭</div>
+        <div class="footer-floating-element footer-element-2">🎪</div>
+        <div class="footer-floating-element footer-element-3">🎨</div>
+        
+        <div class="footer-container">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-about">
+                        <div class="footer-logo-container">
+                            <img src="data:image/png;base64,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" alt="Academia Prietenilor Logo" class="footer-logo">
+                            <div class="logo-squiggle"></div>
+                        </div>
+                        <p class="footer-text">Academia Prietenilor is dedicated to bringing Romanian culture and traditions to families in the UK through engaging events and festivals that create lasting memories.</p>
+                        <div class="footer-social">
+                            <a href="#" class="social-icon facebook-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon instagram-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon youtube-icon"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3 class="footer-column-title">Quick Links</h3>
+                        <ul class="footer-links">
+                            <li class="footer-link"><a href="#">Home</a></li>
+                            <li class="footer-link"><a href="#">Despre</a></li>
+                            <li class="footer-link"><a href="#">Anglia prin Ochii Mei</a></li>
+                            <li class="footer-link"><a href="#">Friends Kids Festival</a></li>
+                            <li class="footer-link"><a href="#">Gallery</a></li>
+                            <li class="footer-link"><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3 class="footer-column-title">Events</h3>
+                        <ul class="footer-links">
+                            <li class="footer-link"><a href="#">Friends Kids Festival</a></li>
+                            <li class="footer-link"><a href="#">Friends East Folkloric Festival</a></li>
+                            <li class="footer-link"><a href="#">Petreceri</a></li>
+                            <li class="footer-link"><a href="#">Gallery</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3 class="footer-column-title">Contact Us</h3>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="contact-text">123 Festival Street, Barnsley, UK</div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                            <div class="contact-text">+44 123 456 7890</div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="contact-text">info@academiaprietenilor.co.uk</div>
+                        </div>
+                        
+                        <h3 class="footer-column-title">Newsletter</h3>
+                        <p class="footer-text">Stay updated with our latest events!</p>
+                        <form class="newsletter-form">
+                            <input type="email" class="newsletter-input" placeholder="Your email address">
+                            <button type="submit" class="newsletter-btn">Join</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p class="copyright">&copy; 2025 Academia Prietenilor. All Rights Reserved. Made with <span class="heart-icon">❤</span> in the UK.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Go to top button -->
+        <div class="go-top-btn" id="goTopBtn">
+            <i class="fas fa-arrow-up"></i>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        document.getElementById('hamburger').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+        
+        // Tab Switching
+        const tabButtons = document.querySelectorAll('.auth-tab-btn');
+        const tabContents = document.querySelectorAll('.auth-tab-content');
+        
+        tabButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                // Hide all tab contents
+                tabContents.forEach(content => content.classList.remove('active'));
+                // Show selected tab content
+                const tabId = this.dataset.tab;
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
+        // Password Visibility Toggle
+        const toggleButtons = document.querySelectorAll('.toggle-password');
+        
+        toggleButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const input = this.previousElementSibling;
+                const icon = this.querySelector('i');
+                
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    icon.classList.remove('fa-eye');
+                    icon.classList.add('fa-eye-slash');
+                } else {
+                    input.type = 'password';
+                    icon.classList.remove('fa-eye-slash');
+                    icon.classList.add('fa-eye');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
